@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b68opk4tqriel"]
+[gd_scene load_steps=8 format=3 uid="uid://b68opk4tqriel"]
 
 [ext_resource type="Script" path="res://scenes/player/gura.gd" id="1_ntysr"]
 [ext_resource type="Texture2D" uid="uid://d3y3qg50rvgqv" path="res://icon.svg" id="1_umyca"]
@@ -7,6 +7,34 @@
 size = Vector2(80, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvf67"]
+
+[sub_resource type="Animation" id="Animation_0rhkm"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_i2ii3"]
+resource_name = "attack"
+length = 0.250002
+step = 0.0166667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attackFinished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cbnte"]
+_data = {
+"attack": SubResource("Animation_i2ii3"),
+"idle": SubResource("Animation_0rhkm")
+}
 
 [node name="gura" type="CharacterBody2D"]
 script = ExtResource("1_ntysr")
@@ -25,3 +53,14 @@ debug_color = Color(4.09111e-07, 0.648097, 0.191694, 0.42)
 shape = SubResource("RectangleShape2D_hvf67")
 disabled = true
 debug_color = Color(0.991833, 0, 0.260309, 0.42)
+
+[node name="tmrDash" type="Timer" parent="."]
+one_shot = true
+
+[node name="tmrAttack" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cbnte")
+}
