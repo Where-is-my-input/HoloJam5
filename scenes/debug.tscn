@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=4 uid="uid://cqxhv5eynr8s7"]
+
+[ext_resource type="PackedScene" uid="uid://ih1f1d7fjsm7" path="res://scenes/tiles/tile_map_layer.tscn" id="1_ul2rp"]
+[ext_resource type="PackedScene" uid="uid://b68opk4tqriel" path="res://scenes/player/gura.tscn" id="2_xy1nu"]
+
+[node name="debug" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_ul2rp")]
+tile_map_data = PackedByteArray("AAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAHAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAALAAUAAAAAAAAAAAA=")
+
+[node name="gura" parent="." instance=ExtResource("2_xy1nu")]
+position = Vector2(260, 210)

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b68opk4tqriel"]
+
+[ext_resource type="Script" path="res://scenes/player/gura.gd" id="1_ntysr"]
+[ext_resource type="Texture2D" uid="uid://d3y3qg50rvgqv" path="res://icon.svg" id="1_umyca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33hbr"]
+size = Vector2(80, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvf67"]
+
+[node name="gura" type="CharacterBody2D"]
+script = ExtResource("1_ntysr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_umyca")
+
+[node name="hurtbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_33hbr")
+debug_color = Color(4.09111e-07, 0.648097, 0.191694, 0.42)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_hvf67")
+disabled = true
+debug_color = Color(0.991833, 0, 0.260309, 0.42)
