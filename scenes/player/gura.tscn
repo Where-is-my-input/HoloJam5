@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b68opk4tqriel"]
+[gd_scene load_steps=12 format=3 uid="uid://b68opk4tqriel"]
 
 [ext_resource type="Script" path="res://scenes/player/gura.gd" id="1_ntysr"]
 [ext_resource type="Texture2D" uid="uid://d3y3qg50rvgqv" path="res://icon.svg" id="1_umyca"]
 [ext_resource type="PackedScene" uid="uid://rc3aggfpupcw" path="res://scenes/virtual_controller/virtual_controller.tscn" id="3_ms0ls"]
+[ext_resource type="PackedScene" uid="uid://dy52xgdagusrt" path="res://scenes/player/gura_noises.tscn" id="4_jxgs5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33hbr"]
 size = Vector2(80, 80)
@@ -178,5 +179,7 @@ libraries = {
 }
 
 [node name="virtualController" parent="." instance=ExtResource("3_ms0ls")]
+
+[node name="gura_noises" parent="." instance=ExtResource("4_jxgs5")]
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

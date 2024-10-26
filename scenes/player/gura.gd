@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var tmr_attack: Timer = $tmrAttack
 @onready var virtual_controller: Node = $virtualController
+@onready var gura_noises: AudioStreamPlayer2D = $gura_noises
 
 const SPEED = 300.0
 const DASH_SPEED = 1050.0
@@ -30,15 +31,18 @@ func _physics_process(delta: float) -> void:
 		
 		if virtual_controller.dash:
 			if is_on_floor() && tmr_dash.is_stopped():
+				gura_noises.playAction()
 				virtual_controller.dashed()
 				tmr_dash.start(dashTimer)
 			elif airDashes > 0:
+				gura_noises.playAction()
 				virtual_controller.dashed()
 				airDashes -= 1
 				tmr_dash.start(dashTimer)
 				velocity.y = 0
 		
 		if virtual_controller.jump && (is_on_floor() || jumps > 0):
+			gura_noises.playAction()
 			jumps -= 1
 			velocity.y = JUMP_VELOCITY
 			virtual_controller.jumped()
@@ -78,6 +82,7 @@ func attackFinished():
 	attacking = false
 
 func _on_hitbox_body_entered(body) -> void:
+	gura_noises.playHit()
 	hitStop = 15
 	attacking = false
 	tmr_attack.stop()
