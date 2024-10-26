@@ -17,6 +17,8 @@ var dashTimer = 0.3
 var attackMovementSpeed:Vector2 = Vector2(8,4)
 
 var facing = 1
+
+@export var trident:bool = true
 var attacking:bool = false
 var atkTimer:int = 1
 var hitStop:int = 0
@@ -24,8 +26,6 @@ var hitStop:int = 0
 func _physics_process(delta: float) -> void:
 	if hitStop > 0:
 		hitStop -= 1
-		#TODO Input buffer - Virtual controller
-		#if hitStop == 0: attackDirection(Input.get_axis("ui_up", "ui_down"))
 	else:
 		
 		if virtual_controller.dash:
@@ -37,8 +37,6 @@ func _physics_process(delta: float) -> void:
 				airDashes -= 1
 				tmr_dash.start(dashTimer)
 				velocity.y = 0
-
-		var direction := Input.get_axis("ui_left", "ui_right")
 		
 		if virtual_controller.jump && (is_on_floor() || jumps > 0):
 			jumps -= 1
@@ -54,25 +52,25 @@ func _physics_process(delta: float) -> void:
 				jumps = maxJumps
 				airDashes = maxAirDashes
 
-			if direction:
+			if virtual_controller.direction.x:
 				
-				if direction != facing:
-					facing = direction
+				if virtual_controller.direction.x != facing:
+					facing = virtual_controller.direction.x
 					scale.x *= -1
 				
-				velocity.x = direction * SPEED if tmr_dash.is_stopped() else direction * (DASH_SPEED + SPEED * tmr_dash.time_left)
+				velocity.x = virtual_controller.direction.x * SPEED if tmr_dash.is_stopped() else virtual_controller.direction.x * (DASH_SPEED + SPEED * tmr_dash.time_left)
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-		if virtual_controller.attack && tmr_attack.is_stopped():
-			attack(Input.get_axis("ui_up", "ui_down"))
+		if virtual_controller.attack && trident && tmr_attack.is_stopped():
+			attack()
 
 	move_and_slide()
 
-func attack(directionY = 0):
+func attack():
 	tmr_attack.start(atkTimer)
 	attacking = true
-	velocity = Vector2(facing * SPEED, directionY * SPEED) * attackMovementSpeed
+	velocity = Vector2(facing * SPEED, virtual_controller.direction.y * SPEED) * attackMovementSpeed
 	animation_player.play("attack")
 
 func attackFinished():
@@ -83,14 +81,3 @@ func _on_hitbox_body_entered(body) -> void:
 	hitStop = 15
 	attacking = false
 	tmr_attack.stop()
-
-func attackDirection(directionY = 0):
-	velocity = Vector2(facing * SPEED * 2, directionY * SPEED) * attackMovementSpeed
-	animation_player.play("followUp")
-	#match directionY:
-		#1:
-			#animation_player.play("attack")
-		#-1:
-			#animation_player.play("attack")
-		#_:
-			#animation_player.play("attack")
