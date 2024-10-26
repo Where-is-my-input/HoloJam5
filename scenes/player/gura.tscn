@@ -1,15 +1,53 @@
-[gd_scene load_steps=8 format=3 uid="uid://b68opk4tqriel"]
+[gd_scene load_steps=11 format=3 uid="uid://b68opk4tqriel"]
 
 [ext_resource type="Script" path="res://scenes/player/gura.gd" id="1_ntysr"]
 [ext_resource type="Texture2D" uid="uid://d3y3qg50rvgqv" path="res://icon.svg" id="1_umyca"]
+[ext_resource type="PackedScene" uid="uid://rc3aggfpupcw" path="res://scenes/virtual_controller/virtual_controller.tscn" id="3_ms0ls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33hbr"]
 size = Vector2(80, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvf67"]
+size = Vector2(48, 112)
 
-[sub_resource type="Animation" id="Animation_0rhkm"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_rxf7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hitbox/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 112)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hitbox/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_i2ii3"]
 resource_name = "attack"
@@ -29,10 +67,81 @@ tracks/0/keys = {
 "method": &"attackFinished"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hitbox/CollisionShape2D:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(48, 112)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hitbox/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(32, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w5cxn"]
+resource_name = "followUp"
+step = 0.0166667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attackFinished"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_0rhkm"]
+resource_name = "idle"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cbnte"]
 _data = {
+"RESET": SubResource("Animation_rxf7h"),
 "attack": SubResource("Animation_i2ii3"),
+"followUp": SubResource("Animation_w5cxn"),
 "idle": SubResource("Animation_0rhkm")
 }
 
@@ -48,8 +157,11 @@ shape = SubResource("RectangleShape2D_33hbr")
 debug_color = Color(4.09111e-07, 0.648097, 0.191694, 0.42)
 
 [node name="hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_hvf67")
 disabled = true
 debug_color = Color(0.991833, 0, 0.260309, 0.42)
@@ -64,3 +176,7 @@ one_shot = true
 libraries = {
 "": SubResource("AnimationLibrary_cbnte")
 }
+
+[node name="virtualController" parent="." instance=ExtResource("3_ms0ls")]
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
