@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dy52xgdagusrt" path="res://scenes/player/gura_noises.tscn" id="4_jxgs5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33hbr"]
-size = Vector2(80, 80)
+size = Vector2(80, 120)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvf67"]
 size = Vector2(48, 112)
@@ -146,14 +146,18 @@ _data = {
 "idle": SubResource("Animation_0rhkm")
 }
 
-[node name="gura" type="CharacterBody2D"]
+[node name="gura" type="CharacterBody2D" groups=["Player"]]
+z_index = 5
 script = ExtResource("1_ntysr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.625, 0.625)
+position = Vector2(-4.76837e-07, 8)
+scale = Vector2(0.375, 0.5)
 texture = ExtResource("1_umyca")
 
 [node name="hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_33hbr")
 debug_color = Color(4.09111e-07, 0.648097, 0.191694, 0.42)
 

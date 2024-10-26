@@ -86,3 +86,16 @@ func _on_hitbox_body_entered(body) -> void:
 	hitStop = 15
 	attacking = false
 	tmr_attack.stop()
+	body.getHit()
+
+func die():
+	gura_noises.playDeath()
+	await gura_noises.finished
+	queue_free()
+
+func resetActions():
+	airDashes = maxAirDashes
+	jumps = maxJumps
+	tmr_attack.stop()
+	attacking = false
+	tmr_dash.stop()

@@ -60,12 +60,15 @@ func playIdle():
 	playClip(IDLE)
 
 func playDeath():
+	stop()
 	playClip(DEATH)
 
 func playHit():
+	stop()
 	playClip(HIT)
 
 func playClip(array):
-	var key = array.keys()[randi_range(0, array.size() - 1)]
-	stream = array[key]
+	if playing: return
+	#var key = array.keys()[randi_range(0, array.size() - 1)]
+	stream = array[array.keys().pick_random()]
 	play()

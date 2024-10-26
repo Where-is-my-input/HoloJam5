@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=4 uid="uid://cqxhv5eynr8s7"]
+[gd_scene load_steps=7 format=4 uid="uid://cqxhv5eynr8s7"]
 
+[ext_resource type="Script" path="res://scenes/debug.gd" id="1_5bjny"]
 [ext_resource type="PackedScene" uid="uid://ih1f1d7fjsm7" path="res://scenes/tiles/tile_map_layer.tscn" id="1_ul2rp"]
 [ext_resource type="PackedScene" uid="uid://b68opk4tqriel" path="res://scenes/player/gura.tscn" id="2_xy1nu"]
 [ext_resource type="PackedScene" uid="uid://b3lgs6gqc3jpo" path="res://scenes/enemy/enemy.tscn" id="3_5ydd6"]
+[ext_resource type="PackedScene" uid="uid://y75nvyccj2mn" path="res://scenes/spikes/spikes.tscn" id="4_uhxy4"]
+[ext_resource type="PackedScene" uid="uid://b2umf4h7vpsq0" path="res://scenes/action_resetter/action_resetter.tscn" id="5_u2a1n"]
 
 [node name="debug" type="Node2D"]
+script = ExtResource("1_5bjny")
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_ul2rp")]
 tile_map_data = PackedByteArray("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")
@@ -25,3 +29,86 @@ position = Vector2(544, 248)
 
 [node name="enemy4" parent="." instance=ExtResource("3_5ydd6")]
 position = Vector2(687, 175)
+
+[node name="spikes" type="Node" parent="."]
+
+[node name="spikes" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(432, 496)
+
+[node name="spikes2" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1248, 496)
+
+[node name="spikes3" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1280, 496)
+
+[node name="spikes4" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1312, 496)
+
+[node name="spikes5" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1344, 496)
+
+[node name="spikes6" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1376, 496)
+
+[node name="spikes7" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1408, 496)
+
+[node name="spikes8" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1440, 496)
+
+[node name="spikes9" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1472, 496)
+
+[node name="spikes10" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1504, 496)
+
+[node name="spikes11" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1536, 496)
+
+[node name="spikes12" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1568, 496)
+
+[node name="spikes13" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1600, 496)
+
+[node name="spikes14" parent="spikes" instance=ExtResource("4_uhxy4")]
+position = Vector2(1632, 496)
+
+[node name="resetters" type="Node" parent="."]
+
+[node name="action_resetter" parent="resetters" instance=ExtResource("5_u2a1n")]
+position = Vector2(1328, 168)
+
+[node name="action_resetter2" parent="resetters" instance=ExtResource("5_u2a1n")]
+position = Vector2(1864, 280)
+
+[node name="action_resetter3" parent="resetters" instance=ExtResource("5_u2a1n")]
+position = Vector2(2336, 152)
+
+[node name="action_resetter4" parent="resetters" instance=ExtResource("5_u2a1n")]
+position = Vector2(2600, 152)
+
+[node name="action_resetter5" parent="resetters" instance=ExtResource("5_u2a1n")]
+position = Vector2(2944, 136)
+
+[node name="action_resetter6" parent="resetters" instance=ExtResource("5_u2a1n")]
+position = Vector2(3360, 152)
+
+[node name="action_resetter7" parent="resetters" instance=ExtResource("5_u2a1n")]
+position = Vector2(3808, 160)
+
+[node name="action_resetter8" parent="resetters" instance=ExtResource("5_u2a1n")]
+position = Vector2(4272, 232)
+
+[node name="action_resetter9" parent="resetters" instance=ExtResource("5_u2a1n")]
+position = Vector2(4600, 264)
+
+[node name="1" type="Button" parent="."]
+offset_left = -120.0
+offset_top = 456.0
+offset_right = -57.0
+offset_bottom = 510.0
+text = "stage 1
+w"
+
+[connection signal="pressed" from="1" to="." method="_on__pressed"]
