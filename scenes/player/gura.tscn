@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cpa8evle5vart" path="res://scenes/vfx/blood.tscn" id="6_7i17h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33hbr"]
-size = Vector2(80, 120)
+size = Vector2(42.6667, 76)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvf67"]
-size = Vector2(48, 112)
+size = Vector2(0, 0)
 
 [sub_resource type="Animation" id="Animation_rxf7h"]
 length = 0.001
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(48, 112)]
+"values": [Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -92,7 +92,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(48, 112)]
+"values": [Vector2(26.6667, 53.3333)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -104,7 +104,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(32, 0)]
+"values": [Vector2(8, 10.6667)]
 }
 
 [sub_resource type="Animation" id="Animation_w5cxn"]
@@ -159,7 +159,7 @@ scale = Vector2(0.201681, 0.268908)
 texture = ExtResource("2_vif1h")
 
 [node name="hurtbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 13.6667)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_33hbr")
 debug_color = Color(4.09111e-07, 0.648097, 0.191694, 0.42)
@@ -183,6 +183,9 @@ one_shot = true
 [node name="tmr_idle" type="Timer" parent="."]
 one_shot = true
 
+[node name="tmrCoyoteJump" type="Timer" parent="."]
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_cbnte")
@@ -198,10 +201,12 @@ zoom = Vector2(2, 2)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="install_progress" parent="CanvasLayer" instance=ExtResource("5_u1jl8")]
+visible = false
 offset_left = -136.0
 offset_top = 888.0
 offset_right = 1784.0
 offset_bottom = 1968.0
+value = 0.0
 
 [node name="blood" parent="CanvasLayer" instance=ExtResource("6_7i17h")]
 visible = false

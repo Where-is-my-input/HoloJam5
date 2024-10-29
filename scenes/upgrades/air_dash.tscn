@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bldelph70j31k"]
+
+[ext_resource type="Texture2D" uid="uid://d3y3qg50rvgqv" path="res://icon.svg" id="1_hlruh"]
+[ext_resource type="Script" path="res://scenes/upgrades/air_dash.gd" id="1_qln8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqm8e"]
+size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_c66qf"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, -40)]
+}
+
+[sub_resource type="Animation" id="Animation_a07bn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32nny"]
+_data = {
+"RESET": SubResource("Animation_a07bn"),
+"new_animation": SubResource("Animation_c66qf")
+}
+
+[node name="air_dash" type="Area2D"]
+script = ExtResource("1_qln8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hlruh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rqm8e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_32nny")
+}
+autoplay = "new_animation"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

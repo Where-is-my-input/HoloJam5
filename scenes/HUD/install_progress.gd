@@ -16,9 +16,7 @@ func _on_timer_timeout() -> void:
 	value -= decay
 	visible = value > 0
 	if value <= 0 && install: 
-		install = false
-		installDeactivated.emit()
-		value = 0
+		deactivateInstall()
 	else:
 		timer.start(1)
 
@@ -32,3 +30,11 @@ func hit():
 		install = value >= max_value
 		if install: 
 			installActivated.emit()
+
+func deactivateInstall():
+	decay = 0
+	combo = 0
+	install = false
+	installDeactivated.emit()
+	value = 0
+	visible = value > 0

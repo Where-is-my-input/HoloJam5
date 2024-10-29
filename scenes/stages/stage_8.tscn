@@ -1,0 +1,223 @@
+[gd_scene load_steps=5 format=4 uid="uid://dvnbmxafg6riw"]
+
+[ext_resource type="PackedScene" uid="uid://wf125dnajpfd" path="res://scenes/stages/stage.tscn" id="1_dimst"]
+[ext_resource type="PackedScene" uid="uid://ce5freklb3vop" path="res://scenes/upgrades/double_jump.tscn" id="2_gn8t8"]
+[ext_resource type="PackedScene" uid="uid://y75nvyccj2mn" path="res://scenes/spikes/spikes.tscn" id="3_rrsyy"]
+[ext_resource type="PackedScene" uid="uid://b3lgs6gqc3jpo" path="res://scenes/enemy/enemy.tscn" id="4_ktnor"]
+
+[node name="stage_8" instance=ExtResource("1_dimst")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAADAAoAAAAAAAAAAAADAAsAAAAAAAAAAAADAAwAAAAAAAAAAAADAA0AAAAAAAAAAAADAA4AAAAAAAAAAAADAA8AAAAAAAAAAAADABAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAIAAAABAAAAAAAEAAMAAAABAAAAAAAEAAQAAAABAAAAAAAEAAUAAAABAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAoAAAAAAAAAAAAEAAsAAAAAAAAAAAAEAAwAAAAAAAAAAAAEAA0AAAAAAAAAAAAEAA4AAAAAAAAAAAAEAA8AAAAAAAAAAAAEABAAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAFAAMAAAABAAAAAAAFAAQAAAABAAAAAAAFAAUAAAABAAAAAAAFAAYAAAAAAAAAAAAFAAcAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAFAAsAAAAAAAAAAAAFAAwAAAAAAAAAAAAFAA0AAAAAAAAAAAAFAA4AAAAAAAAAAAAFAA8AAAAAAAAAAAAFABAAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAGAAQAAAABAAAAAAAGAAUAAAABAAAAAAAGAAYAAAABAAAAAAAGAAcAAAABAAAAAAAGAAgAAAABAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAABAAAAAAAGAAsAAAABAAAAAAAGAAwAAAABAAAAAAAGAA0AAAABAAAAAAAGAA4AAAABAAAAAAAGAA8AAAABAAAAAAAGABAAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAABAAAAAAAHAAIAAAABAAAAAAAHAAMAAAABAAAAAAAHAAQAAAABAAAAAAAHAAUAAAABAAAAAAAHAAYAAAABAAAAAAAHAAcAAAABAAAAAAAHAAgAAAABAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAABAAAAAAAHAAsAAAABAAAAAAAHAAwAAAABAAAAAAAHAA0AAAABAAAAAAAHAA4AAAABAAAAAAAHAA8AAAABAAAAAAAHABAAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAABAAAAAAAIAAIAAAABAAAAAAAIAAMAAAABAAAAAAAIAAQAAAABAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAABAAAAAAAIAAcAAAABAAAAAAAIAAgAAAABAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAABAAAAAAAIAAsAAAABAAAAAAAIAAwAAAABAAAAAAAIAA0AAAABAAAAAAAIAA4AAAABAAAAAAAIAA8AAAABAAAAAAAIABAAAAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAQAAAABAAAAAAAJAAUAAAABAAAAAAAJAAYAAAABAAAAAAAJAAcAAAABAAAAAAAJAAgAAAABAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAABAAAAAAAJAAsAAAABAAAAAAAJAAwAAAAAAAAAAAAJAA0AAAABAAAAAAAJAA4AAAABAAAAAAAJAA8AAAABAAAAAAAJABAAAAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAABAAAAAAAKAAIAAAABAAAAAAAKAAMAAAABAAAAAAAKAAQAAAABAAAAAAAKAAUAAAABAAAAAAAKAAYAAAABAAAAAAAKAAcAAAABAAAAAAAKAAgAAAABAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAABAAAAAAAKAAsAAAABAAAAAAAKAAwAAAABAAAAAAAKAA0AAAABAAAAAAAKAA4AAAABAAAAAAAKAA8AAAABAAAAAAAKABAAAAAAAAAAAAALAAAAAAAAAAAAAAALAAEAAAABAAAAAAALAAIAAAABAAAAAAALAAMAAAABAAAAAAALAAQAAAABAAAAAAALAAUAAAABAAAAAAALAAYAAAABAAAAAAALAAcAAAABAAAAAAALAAgAAAABAAAAAAALAAkAAAAAAAAAAAALAAoAAAABAAAAAAALAAsAAAABAAAAAAALAAwAAAABAAAAAAALAA0AAAABAAAAAAALAA4AAAABAAAAAAALAA8AAAABAAAAAAALABAAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAAEAAAABAAAAAAAMAAIAAAABAAAAAAAMAAMAAAABAAAAAAAMAAQAAAABAAAAAAAMAAUAAAABAAAAAAAMAAYAAAABAAAAAAAMAAcAAAABAAAAAAAMAAgAAAABAAAAAAAMAAkAAAAAAAAAAAAMAAoAAAABAAAAAAAMAAsAAAABAAAAAAAMAAwAAAABAAAAAAAMAA0AAAABAAAAAAAMAA4AAAABAAAAAAAMAA8AAAABAAAAAAAMABAAAAAAAAAAAAANAAAAAAAAAAAAAAANAAEAAAABAAAAAAANAAIAAAABAAAAAAANAAMAAAABAAAAAAANAAQAAAABAAAAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAANAAgAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAABAAAAAAANAAsAAAABAAAAAAANAAwAAAABAAAAAAANAA0AAAABAAAAAAANAA4AAAABAAAAAAANAA8AAAABAAAAAAANABAAAAAAAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAABAAAAAAAOAAIAAAABAAAAAAAOAAMAAAABAAAAAAAOAAQAAAABAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAABAAAAAAAOAAcAAAABAAAAAAAOAAgAAAABAAAAAAAOAAkAAAABAAAAAAAOAAoAAAABAAAAAAAOAAsAAAABAAAAAAAOAAwAAAABAAAAAAAOAA0AAAAAAAAAAAAOAA4AAAAAAAAAAAAOAA8AAAAAAAAAAAAOABAAAAAAAAAAAAAPAAAAAAAAAAAAAAAPAAEAAAABAAAAAAAPAAIAAAABAAAAAAAPAAMAAAABAAAAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAYAAAABAAAAAAAPAAcAAAABAAAAAAAPAAgAAAABAAAAAAAPAAkAAAABAAAAAAAPAAoAAAABAAAAAAAPAAsAAAABAAAAAAAPAAwAAAABAAAAAAAPAA0AAAAAAAAAAAAPAA4AAAAAAAAAAAAPAA8AAAAAAAAAAAAPABAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAEAAAABAAAAAAAQAAIAAAABAAAAAAAQAAMAAAABAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAYAAAABAAAAAAAQAAcAAAABAAAAAAAQAAgAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAoAAAAAAAAAAAAQAAsAAAAAAAAAAAAQAAwAAAAAAAAAAAAQAA0AAAAAAAAAAAAQAA4AAAAAAAAAAAAQAA8AAAAAAAAAAAAQABAAAAAAAAAAAAARAAAAAAAAAAAAAAARAAEAAAABAAAAAAARAAIAAAABAAAAAAARAAMAAAABAAAAAAARAAQAAAAAAAAAAAARAAUAAAABAAAAAAARAAYAAAABAAAAAAARAAcAAAABAAAAAAARAAgAAAABAAAAAAARAAkAAAABAAAAAAARAAoAAAABAAAAAAARAAsAAAABAAAAAAARAAwAAAAAAAAAAAARAA0AAAAAAAAAAAARAA4AAAAAAAAAAAARAA8AAAAAAAAAAAARABAAAAAAAAAAAAASAAAAAAAAAAAAAAASAAEAAAABAAAAAAASAAIAAAABAAAAAAASAAMAAAABAAAAAAASAAQAAAAAAAAAAAASAAUAAAABAAAAAAASAAYAAAABAAAAAAASAAcAAAABAAAAAAASAAgAAAABAAAAAAASAAkAAAABAAAAAAASAAoAAAABAAAAAAASAAsAAAABAAAAAAASAAwAAAAAAAAAAAASAA0AAAAAAAAAAAASAA4AAAAAAAAAAAASAA8AAAAAAAAAAAASABAAAAAAAAAAAAATAAAAAAAAAAAAAAATAAEAAAAAAAAAAAATAAIAAAABAAAAAAATAAMAAAABAAAAAAATAAQAAAAAAAAAAAATAAUAAAABAAAAAAATAAYAAAABAAAAAAATAAcAAAAAAAAAAAATAAgAAAAAAAAAAAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAATAAsAAAAAAAAAAAATAAwAAAAAAAAAAAATAA0AAAAAAAAAAAATAA4AAAAAAAAAAAATAA8AAAAAAAAAAAATABAAAAAAAAAAAAAUAAAAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAIAAAABAAAAAAAUAAMAAAABAAAAAAAUAAQAAAAAAAAAAAAUAAUAAAABAAAAAAAUAAYAAAABAAAAAAAUAAcAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAAAAAAUAA0AAAAAAAAAAAAUAA4AAAAAAAAAAAAUAA8AAAAAAAAAAAAUABAAAAAAAAAAAAAVAAAAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAIAAAABAAAAAAAVAAMAAAABAAAAAAAVAAQAAAAAAAAAAAAVAAUAAAABAAAAAAAVAAYAAAABAAAAAAAVAAcAAAAAAAAAAAAVAAgAAAAAAAAAAAAVAAkAAAAAAAAAAAAVAAoAAAAAAAAAAAAVAAsAAAAAAAAAAAAVAAwAAAAAAAAAAAAVAA0AAAAAAAAAAAAVAA4AAAAAAAAAAAAVAA8AAAAAAAAAAAAVABAAAAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAWAAIAAAABAAAAAAAWAAMAAAABAAAAAAAWAAQAAAABAAAAAAAWAAUAAAABAAAAAAAWAAYAAAABAAAAAAAWAAcAAAAAAAAAAAAWAAgAAAAAAAAAAAAWAAkAAAAAAAAAAAAWAAoAAAAAAAAAAAAWAAsAAAAAAAAAAAAWAAwAAAAAAAAAAAAWAA0AAAAAAAAAAAAWAA4AAAAAAAAAAAAWAA8AAAAAAAAAAAAWABAAAAAAAAAAAAAXAAAAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAIAAAABAAAAAAAXAAMAAAABAAAAAAAXAAQAAAABAAAAAAAXAAUAAAABAAAAAAAXAAYAAAABAAAAAAAXAAcAAAAAAAAAAAAXAAgAAAAAAAAAAAAXAAkAAAAAAAAAAAAXAAoAAAAAAAAAAAAXAAsAAAAAAAAAAAAXAAwAAAAAAAAAAAAXAA0AAAAAAAAAAAAXAA4AAAAAAAAAAAAXAA8AAAAAAAAAAAAXABAAAAAAAAAAAAAYAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAIAAAAAAAAAAAAYAAMAAAAAAAAAAAAYAAQAAAAAAAAAAAAYAAUAAAAAAAAAAAAYAAYAAAAAAAAAAAAYAAcAAAAAAAAAAAAYAAgAAAAAAAAAAAAYAAkAAAAAAAAAAAAYAAoAAAAAAAAAAAAYAAsAAAAAAAAAAAAYAAwAAAAAAAAAAAAYAA0AAAAAAAAAAAAYAA4AAAAAAAAAAAAYAA8AAAAAAAAAAAAYABAAAAAAAAAAAAA=")
+
+[node name="end_stage" parent="." index="1"]
+position = Vector2(464, 896)
+
+[node name="gura" parent="." index="2"]
+position = Vector2(328, 328)
+trident = true
+
+[node name="double_jump" parent="." index="3" instance=ExtResource("2_gn8t8")]
+position = Vector2(1024, 184)
+
+[node name="Node" type="Node" parent="." index="4"]
+
+[node name="spikes" parent="Node" index="0" instance=ExtResource("3_rrsyy")]
+position = Vector2(400, 560)
+
+[node name="spikes31" parent="Node" index="1" instance=ExtResource("3_rrsyy")]
+position = Vector2(1232, 240)
+
+[node name="spikes32" parent="Node" index="2" instance=ExtResource("3_rrsyy")]
+position = Vector2(1264, 240)
+
+[node name="spikes33" parent="Node" index="3" instance=ExtResource("3_rrsyy")]
+position = Vector2(1296, 240)
+
+[node name="spikes34" parent="Node" index="4" instance=ExtResource("3_rrsyy")]
+position = Vector2(1328, 240)
+
+[node name="spikes39" parent="Node" index="5" instance=ExtResource("3_rrsyy")]
+position = Vector2(1360, 240)
+
+[node name="spikes40" parent="Node" index="6" instance=ExtResource("3_rrsyy")]
+position = Vector2(1392, 240)
+
+[node name="spikes41" parent="Node" index="7" instance=ExtResource("3_rrsyy")]
+position = Vector2(1488, 432)
+
+[node name="spikes42" parent="Node" index="8" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 432)
+
+[node name="spikes43" parent="Node" index="9" instance=ExtResource("3_rrsyy")]
+position = Vector2(1424, 432)
+
+[node name="spikes44" parent="Node" index="10" instance=ExtResource("3_rrsyy")]
+position = Vector2(1456, 432)
+
+[node name="spikes45" parent="Node" index="11" instance=ExtResource("3_rrsyy")]
+position = Vector2(1360, 432)
+
+[node name="spikes46" parent="Node" index="12" instance=ExtResource("3_rrsyy")]
+position = Vector2(1392, 432)
+
+[node name="spikes47" parent="Node" index="13" instance=ExtResource("3_rrsyy")]
+position = Vector2(1296, 432)
+
+[node name="spikes48" parent="Node" index="14" instance=ExtResource("3_rrsyy")]
+position = Vector2(1328, 432)
+
+[node name="spikes49" parent="Node" index="15" instance=ExtResource("3_rrsyy")]
+position = Vector2(1232, 432)
+
+[node name="spikes50" parent="Node" index="16" instance=ExtResource("3_rrsyy")]
+position = Vector2(1264, 432)
+
+[node name="spikes51" parent="Node" index="17" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 400)
+rotation = -1.5708
+
+[node name="spikes52" parent="Node" index="18" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 368)
+rotation = -1.5708
+
+[node name="spikes53" parent="Node" index="19" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 336)
+rotation = -1.5708
+
+[node name="spikes54" parent="Node" index="20" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 304)
+rotation = -1.5708
+
+[node name="spikes55" parent="Node" index="21" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 272)
+rotation = -1.5708
+
+[node name="spikes56" parent="Node" index="22" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 240)
+rotation = -1.5708
+
+[node name="spikes57" parent="Node" index="23" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 208)
+rotation = -1.5708
+
+[node name="spikes58" parent="Node" index="24" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 176)
+rotation = -1.5708
+
+[node name="spikes59" parent="Node" index="25" instance=ExtResource("3_rrsyy")]
+position = Vector2(1520, 144)
+rotation = -1.5708
+
+[node name="spikes2" parent="Node" index="26" instance=ExtResource("3_rrsyy")]
+position = Vector2(432, 560)
+
+[node name="spikes3" parent="Node" index="27" instance=ExtResource("3_rrsyy")]
+position = Vector2(464, 560)
+
+[node name="spikes4" parent="Node" index="28" instance=ExtResource("3_rrsyy")]
+position = Vector2(496, 560)
+
+[node name="spikes5" parent="Node" index="29" instance=ExtResource("3_rrsyy")]
+position = Vector2(528, 560)
+
+[node name="spikes6" parent="Node" index="30" instance=ExtResource("3_rrsyy")]
+position = Vector2(560, 560)
+
+[node name="spikes19" parent="Node" index="31" instance=ExtResource("3_rrsyy")]
+position = Vector2(400, 1008)
+
+[node name="spikes20" parent="Node" index="32" instance=ExtResource("3_rrsyy")]
+position = Vector2(432, 1008)
+
+[node name="spikes21" parent="Node" index="33" instance=ExtResource("3_rrsyy")]
+position = Vector2(464, 1008)
+
+[node name="spikes22" parent="Node" index="34" instance=ExtResource("3_rrsyy")]
+position = Vector2(496, 1008)
+
+[node name="spikes23" parent="Node" index="35" instance=ExtResource("3_rrsyy")]
+position = Vector2(528, 1008)
+
+[node name="spikes24" parent="Node" index="36" instance=ExtResource("3_rrsyy")]
+position = Vector2(560, 1008)
+
+[node name="spikes25" parent="Node" index="37" instance=ExtResource("3_rrsyy")]
+position = Vector2(592, 1008)
+
+[node name="spikes26" parent="Node" index="38" instance=ExtResource("3_rrsyy")]
+position = Vector2(624, 1008)
+
+[node name="spikes27" parent="Node" index="39" instance=ExtResource("3_rrsyy")]
+position = Vector2(656, 1008)
+
+[node name="spikes28" parent="Node" index="40" instance=ExtResource("3_rrsyy")]
+position = Vector2(688, 1008)
+
+[node name="spikes29" parent="Node" index="41" instance=ExtResource("3_rrsyy")]
+position = Vector2(720, 1008)
+
+[node name="spikes30" parent="Node" index="42" instance=ExtResource("3_rrsyy")]
+position = Vector2(752, 1008)
+
+[node name="spikes7" parent="Node" index="43" instance=ExtResource("3_rrsyy")]
+position = Vector2(592, 560)
+
+[node name="spikes8" parent="Node" index="44" instance=ExtResource("3_rrsyy")]
+position = Vector2(624, 560)
+
+[node name="spikes9" parent="Node" index="45" instance=ExtResource("3_rrsyy")]
+position = Vector2(656, 560)
+
+[node name="spikes10" parent="Node" index="46" instance=ExtResource("3_rrsyy")]
+position = Vector2(688, 560)
+
+[node name="spikes11" parent="Node" index="47" instance=ExtResource("3_rrsyy")]
+position = Vector2(720, 560)
+
+[node name="spikes12" parent="Node" index="48" instance=ExtResource("3_rrsyy")]
+position = Vector2(752, 560)
+
+[node name="spikes13" parent="Node" index="49" instance=ExtResource("3_rrsyy")]
+position = Vector2(784, 560)
+
+[node name="spikes14" parent="Node" index="50" instance=ExtResource("3_rrsyy")]
+position = Vector2(816, 560)
+
+[node name="spikes15" parent="Node" index="51" instance=ExtResource("3_rrsyy")]
+position = Vector2(1104, 752)
+
+[node name="spikes16" parent="Node" index="52" instance=ExtResource("3_rrsyy")]
+position = Vector2(1136, 752)
+
+[node name="spikes17" parent="Node" index="53" instance=ExtResource("3_rrsyy")]
+position = Vector2(1168, 752)
+
+[node name="spikes18" parent="Node" index="54" instance=ExtResource("3_rrsyy")]
+position = Vector2(1200, 752)
+
+[node name="spikes35" parent="Node" index="55" instance=ExtResource("3_rrsyy")]
+position = Vector2(784, 1008)
+
+[node name="spikes36" parent="Node" index="56" instance=ExtResource("3_rrsyy")]
+position = Vector2(816, 1008)
+
+[node name="spikes37" parent="Node" index="57" instance=ExtResource("3_rrsyy")]
+position = Vector2(848, 1008)
+
+[node name="spikes38" parent="Node" index="58" instance=ExtResource("3_rrsyy")]
+position = Vector2(880, 1008)
+
+[node name="Node2" type="Node" parent="." index="5"]
+
+[node name="enemy" parent="Node2" index="0" instance=ExtResource("4_ktnor")]
+position = Vector2(704, 240)
+
+[node name="enemy2" parent="Node2" index="1" instance=ExtResource("4_ktnor")]
+position = Vector2(1288, 184)
+
+[node name="enemy3" parent="Node2" index="2" instance=ExtResource("4_ktnor")]
+position = Vector2(1456, 184)
+
+[node name="enemy4" parent="Node2" index="3" instance=ExtResource("4_ktnor")]
+position = Vector2(1352, 376)

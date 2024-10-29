@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cqxhv5eynr8s7"]
+[gd_scene load_steps=8 format=4 uid="uid://cqxhv5eynr8s7"]
 
 [ext_resource type="Script" path="res://scenes/debug.gd" id="1_5bjny"]
 [ext_resource type="PackedScene" uid="uid://ih1f1d7fjsm7" path="res://scenes/tiles/tile_map_layer.tscn" id="1_ul2rp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3lgs6gqc3jpo" path="res://scenes/enemy/enemy.tscn" id="3_5ydd6"]
 [ext_resource type="PackedScene" uid="uid://y75nvyccj2mn" path="res://scenes/spikes/spikes.tscn" id="4_uhxy4"]
 [ext_resource type="PackedScene" uid="uid://b2umf4h7vpsq0" path="res://scenes/action_resetter/action_resetter.tscn" id="5_u2a1n"]
+[ext_resource type="PackedScene" uid="uid://b1nv8slhmq3ua" path="res://scenes/stages/end_stage.tscn" id="7_eu1ip"]
 
 [node name="debug" type="Node2D"]
 script = ExtResource("1_5bjny")
@@ -15,7 +16,9 @@ tile_map_data = PackedByteArray("AAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAA
 
 [node name="gura" parent="." instance=ExtResource("2_xy1nu")]
 position = Vector2(13, 404)
+maxJumps = 2
 installEnabled = true
+coyoteJumpBuffer = 5.0
 
 [node name="enemy" parent="." instance=ExtResource("3_5ydd6")]
 position = Vector2(230, 370)
@@ -109,5 +112,8 @@ offset_right = -57.0
 offset_bottom = 510.0
 text = "stage 1
 w"
+
+[node name="end_stage" parent="." instance=ExtResource("7_eu1ip")]
+position = Vector2(-216, 336)
 
 [connection signal="pressed" from="1" to="." method="_on__pressed"]

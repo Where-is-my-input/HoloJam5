@@ -9,8 +9,14 @@ script = ExtResource("1_oxxko")
 [node name="tmrJump" type="Timer" parent="."]
 one_shot = true
 
+[node name="tmrJumpRelease" type="Timer" parent="."]
+one_shot = true
+
 [node name="tmrAttack" type="Timer" parent="."]
 one_shot = true
 
 [node name="tmrDash" type="Timer" parent="."]
+one_shot = true
+
+[node name="tmrDashRelease" type="Timer" parent="."]
 one_shot = true

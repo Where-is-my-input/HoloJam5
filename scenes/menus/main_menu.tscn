@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://68mcxhlnuf6h"]
+
+[ext_resource type="Script" path="res://scenes/menus/main_menu.gd" id="1_ejg02"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ejg02")
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 216.0
+offset_right = 481.0
+offset_bottom = 247.0
+text = "Play"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

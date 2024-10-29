@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvn0281lxmhmw"]
+
+[ext_resource type="Script" path="res://scenes/menus/game_over.gd" id="1_q8o65"]
+
+[node name="game_over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q8o65")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 360.0
+offset_right = 602.0
+offset_bottom = 383.0
+scale = Vector2(10, 10)
+text = "Game overw"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1800.0
+offset_top = 1040.0
+offset_right = 1896.0
+offset_bottom = 1071.0
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
