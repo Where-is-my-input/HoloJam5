@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/virtual_controller/virtual_controller.gd" id="1_oxxko"]
 
 [node name="virtualController" type="Node"]
+process_priority = -1
 script = ExtResource("1_oxxko")
 
 [node name="tmrJump" type="Timer" parent="."]

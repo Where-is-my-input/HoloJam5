@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b68opk4tqriel"]
+[gd_scene load_steps=14 format=3 uid="uid://b68opk4tqriel"]
 
 [ext_resource type="Script" path="res://scenes/player/gura.gd" id="1_ntysr"]
-[ext_resource type="Texture2D" uid="uid://d3y3qg50rvgqv" path="res://icon.svg" id="1_umyca"]
+[ext_resource type="Texture2D" uid="uid://wbu02mvtd8ma" path="res://assets/images/gura/goobadiba.png" id="2_vif1h"]
 [ext_resource type="PackedScene" uid="uid://rc3aggfpupcw" path="res://scenes/virtual_controller/virtual_controller.tscn" id="3_ms0ls"]
 [ext_resource type="PackedScene" uid="uid://dy52xgdagusrt" path="res://scenes/player/gura_noises.tscn" id="4_jxgs5"]
+[ext_resource type="PackedScene" uid="uid://bhes1tqrdc0h8" path="res://scenes/HUD/install_progress.tscn" id="5_u1jl8"]
+[ext_resource type="PackedScene" uid="uid://cpa8evle5vart" path="res://scenes/vfx/blood.tscn" id="6_7i17h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33hbr"]
 size = Vector2(80, 120)
@@ -148,12 +150,13 @@ _data = {
 
 [node name="gura" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_ntysr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, 8)
-scale = Vector2(0.375, 0.5)
-texture = ExtResource("1_umyca")
+position = Vector2(3, 4)
+scale = Vector2(0.201681, 0.268908)
+texture = ExtResource("2_vif1h")
 
 [node name="hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
@@ -177,6 +180,9 @@ one_shot = true
 [node name="tmrAttack" type="Timer" parent="."]
 one_shot = true
 
+[node name="tmr_idle" type="Timer" parent="."]
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_cbnte")
@@ -186,4 +192,21 @@ libraries = {
 
 [node name="gura_noises" parent="." instance=ExtResource("4_jxgs5")]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="install_progress" parent="CanvasLayer" instance=ExtResource("5_u1jl8")]
+offset_left = -136.0
+offset_top = 888.0
+offset_right = 1784.0
+offset_bottom = 1968.0
+
+[node name="blood" parent="CanvasLayer" instance=ExtResource("6_7i17h")]
+visible = false
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="tmr_idle" to="." method="_on_tmr_idle_timeout"]
+[connection signal="installActivated" from="CanvasLayer/install_progress" to="." method="installActivated"]
+[connection signal="installDeactivated" from="CanvasLayer/install_progress" to="." method="installDeactivated"]

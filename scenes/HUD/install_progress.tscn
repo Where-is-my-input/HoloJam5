@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhes1tqrdc0h8"]
+
+[ext_resource type="Texture2D" uid="uid://bs3n8757fp3u5" path="res://assets/images/white_teeth.png" id="1_eut8m"]
+[ext_resource type="Texture2D" uid="uid://c7ho4tf5lffxa" path="res://assets/images/red_teeth.png" id="2_yhd48"]
+[ext_resource type="Script" path="res://scenes/HUD/install_progress.gd" id="3_067hn"]
+
+[node name="install_progress" type="TextureProgressBar"]
+offset_right = 4.0
+offset_bottom = 27.0
+scale = Vector2(0.25, 0.25)
+value = 50.0
+texture_under = ExtResource("1_eut8m")
+texture_progress = ExtResource("2_yhd48")
+script = ExtResource("3_067hn")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

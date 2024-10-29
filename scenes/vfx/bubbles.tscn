@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://clvra3bllqqvs"]
+
+[ext_resource type="Texture2D" uid="uid://bpkd71ps8ns8r" path="res://assets/images/bubble.png" id="1_b0f1v"]
+[ext_resource type="Script" path="res://scenes/vfx/bubbles.gd" id="2_oekjj"]
+
+[node name="bubbles" type="Sprite2D"]
+modulate = Color(0.446777, 0.446777, 0.446777, 1)
+z_index = -5
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_b0f1v")
+script = ExtResource("2_oekjj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -15,8 +15,7 @@ tile_map_data = PackedByteArray("AAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAA
 
 [node name="gura" parent="." instance=ExtResource("2_xy1nu")]
 position = Vector2(13, 404)
-
-[node name="Camera2D" type="Camera2D" parent="gura"]
+installEnabled = true
 
 [node name="enemy" parent="." instance=ExtResource("3_5ydd6")]
 position = Vector2(230, 370)
