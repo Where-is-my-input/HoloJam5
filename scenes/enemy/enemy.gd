@@ -13,6 +13,7 @@ func _ready() -> void:
 func getHit():
 	hp -= 1
 	if hp <= 0:
+		Global.shrimpsSacrificed += 1
 		spawnState()
 		tmr_respawn.start(respawn)
 

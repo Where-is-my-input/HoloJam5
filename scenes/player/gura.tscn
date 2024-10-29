@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpa8evle5vart" path="res://scenes/vfx/blood.tscn" id="6_7i17h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33hbr"]
-size = Vector2(42.6667, 76)
+size = Vector2(42.6667, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvf67"]
 size = Vector2(0, 0)
@@ -50,6 +50,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(32, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hurtbox:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(42.6667, 64)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hurtbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 16)]
 }
 
 [sub_resource type="Animation" id="Animation_i2ii3"]
@@ -106,6 +130,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [Vector2(8, 10.6667)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hurtbox:shape:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(42.6667, 21.3333), Vector2(42.6667, 64)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hurtbox:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 16), Vector2(0, 16)]
+}
 
 [sub_resource type="Animation" id="Animation_w5cxn"]
 resource_name = "followUp"
@@ -159,7 +207,7 @@ scale = Vector2(0.201681, 0.268908)
 texture = ExtResource("2_vif1h")
 
 [node name="hurtbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13.6667)
+position = Vector2(0, 16)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_33hbr")
 debug_color = Color(4.09111e-07, 0.648097, 0.191694, 0.42)

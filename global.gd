@@ -1,6 +1,7 @@
 extends Node
 
 var deaths:int = 0
+var shrimpsSacrificed:int = 0
 var currentStage:int = 1
 var maxJumps:int = 2
 var maxDashes:int = 0
@@ -12,6 +13,7 @@ func _input(event: InputEvent) -> void:
 		get_tree().change_scene_to_file("res://scenes/debug.tscn")
 
 func reset():
+	shrimpsSacrificed = 0
 	deaths = 0
 	currentStage = 1
 	maxJumps = 2

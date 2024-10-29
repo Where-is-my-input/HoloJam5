@@ -27,7 +27,7 @@ var facing = 1
 
 @export var trident:bool = false
 var attacking:bool = false
-var atkTimer:int = 1
+var atkTimer:int = 0.25
 var hitStop:int = 0
 
 @export var installEnabled:bool = false
@@ -44,7 +44,7 @@ func _ready() -> void:
 
 func installDeactivated():
 	print("Install deactivated")
-	maxAirDashes -= 1
+	maxAirDashes = Global.maxDashes
 	blood.visible = false
 
 func installActivated():
@@ -146,6 +146,7 @@ func die():
 	#await gura_noises.finished
 	dead = true
 	install_progress.deactivateInstall()
+	Global.deaths += 1
 	respawn()
 
 func respawn():

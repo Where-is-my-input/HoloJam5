@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkqjocyas50ha"]
+
+[ext_resource type="Texture2D" uid="uid://ctexnsw801lo6" path="res://assets/images/background/Underwater BG Blank.png" id="1_7vdca"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.005, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(944, 496)
+texture = ExtResource("1_7vdca")
