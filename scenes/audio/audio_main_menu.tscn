@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdch887ic1eax"]
+
+[ext_resource type="AudioStream" uid="uid://bu7j08ucdpakl" path="res://assets/audio/bgm/ObservingTheStar.ogg" id="1_es5wc"]
+
+[node name="audioMainMenu" type="AudioStreamPlayer"]
+stream = ExtResource("1_es5wc")
+autoplay = true
+bus = &"BGM"

@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxhadu41tlcpb"]
+
+[ext_resource type="Script" path="res://scenes/menus/credits.gd" id="1_c3ycf"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c3ycf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -192.0
+offset_top = -160.0
+offset_right = -152.0
+offset_bottom = -120.0
+scale = Vector2(56.6554, 33.4062)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 248.0
+offset_right = 498.0
+offset_bottom = 677.0
+theme_override_font_sizes/font_size = 50
+text = "Programming
+Ikkisoad
+
+Art
+Makaai
+Ikkisoad"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 72.0
+offset_right = 1715.0
+offset_bottom = 501.0
+theme_override_font_sizes/font_size = 50
+text = "OpenGameArt Assets"
+horizontal_alignment = 1
+vertical_alignment = 1

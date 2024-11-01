@@ -1,43 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dino77s2rwyc"]
+[gd_scene load_steps=9 format=3 uid="uid://dino77s2rwyc"]
 
-[ext_resource type="Texture2D" uid="uid://d3y3qg50rvgqv" path="res://icon.svg" id="1_0ywej"]
 [ext_resource type="Script" path="res://scenes/trident/trident.gd" id="1_5y8ut"]
+[ext_resource type="Texture2D" uid="uid://b0r4gvaa14n17" path="res://assets/images/gura/gura_sprites.png" id="2_l1613"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o856c"]
 size = Vector2(128, 128)
 
 [sub_resource type="Animation" id="Animation_tsqwm"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_bho6u"]
 resource_name = "idle"
 length = 0.250002
 loop_mode = 2
 step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, -48)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4fmdm"]
 _data = {
@@ -45,11 +21,23 @@ _data = {
 "idle": SubResource("Animation_bho6u")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3gmd"]
+atlas = ExtResource("2_l1613")
+region = Rect2(300, 600, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cixhm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3gmd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="trident" type="Area2D"]
 script = ExtResource("1_5y8ut")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0ywej")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o856c")
@@ -60,5 +48,9 @@ libraries = {
 }
 autoplay = "idle"
 speed_scale = 0.2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 0.498108
+sprite_frames = SubResource("SpriteFrames_cixhm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

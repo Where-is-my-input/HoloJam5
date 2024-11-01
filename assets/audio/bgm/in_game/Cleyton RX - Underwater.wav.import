@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4wuw03dmtbpr"
+path="res://.godot/imported/Cleyton RX - Underwater.wav-62be7db0538a2c504dbf93ca6623168d.sample"
+
+[deps]
+
+source_file="res://assets/audio/bgm/in_game/Cleyton RX - Underwater.wav"
+dest_files=["res://.godot/imported/Cleyton RX - Underwater.wav-62be7db0538a2c504dbf93ca6623168d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

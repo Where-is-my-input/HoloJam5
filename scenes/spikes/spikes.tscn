@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://da8fxx1ic4r06" path="res://assets/images/spikes.png" id="2_5y2w0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wt28"]
-size = Vector2(44, 32)
+size = Vector2(32, 32)
 
 [node name="spikes" type="Area2D"]
 script = ExtResource("1_vvkf1")
@@ -16,7 +16,8 @@ shape = SubResource("RectangleShape2D_0wt28")
 debug_color = Color(0.991213, 0, 0.268499, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.116923, 0.116923)
+position = Vector2(0, 5.49999)
+scale = Vector2(0.116923, 0.0830769)
 texture = ExtResource("2_5y2w0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

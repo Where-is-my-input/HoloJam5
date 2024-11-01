@@ -1,11 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://clvra3bllqqvs"]
+[gd_scene load_steps=9 format=3 uid="uid://clvra3bllqqvs"]
 
 [ext_resource type="Texture2D" uid="uid://bpkd71ps8ns8r" path="res://assets/images/bubble.png" id="1_b0f1v"]
 [ext_resource type="Script" path="res://scenes/vfx/bubbles.gd" id="2_oekjj"]
+[ext_resource type="AudioStream" uid="uid://c74vpod6bllx8" path="res://assets/audio/sfx/bubbles/bubbles-loop1-amp.wav" id="3_gjaeq"]
+[ext_resource type="AudioStream" uid="uid://ca7saw6csne5v" path="res://assets/audio/sfx/bubbles/bubbles-loop2-amp.wav" id="4_gq66e"]
+[ext_resource type="AudioStream" uid="uid://gtenm1dpks6h" path="res://assets/audio/sfx/bubbles/bubbles-single1.wav" id="5_unmxk"]
+[ext_resource type="AudioStream" uid="uid://dbfy1cnh153bn" path="res://assets/audio/sfx/bubbles/bubbles-single2.wav" id="6_uv244"]
+[ext_resource type="AudioStream" uid="uid://by30vov58g4uu" path="res://assets/audio/sfx/bubbles/bubbles-single3.wav" id="7_vkubu"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e5uki"]
+streams_count = 5
+stream_0/stream = ExtResource("3_gjaeq")
+stream_1/stream = ExtResource("4_gq66e")
+stream_2/stream = ExtResource("5_unmxk")
+stream_3/stream = ExtResource("6_uv244")
+stream_4/stream = ExtResource("7_vkubu")
 
 [node name="bubbles" type="Sprite2D"]
-modulate = Color(0.446777, 0.446777, 0.446777, 1)
-z_index = -5
+modulate = Color(1, 1, 1, 0.443137)
+z_index = -1
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_b0f1v")
 script = ExtResource("2_oekjj")
@@ -13,5 +26,11 @@ script = ExtResource("2_oekjj")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_e5uki")
+volume_db = -10.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvn0281lxmhmw"]
+[gd_scene load_steps=3 format=3 uid="uid://cvn0281lxmhmw"]
 
 [ext_resource type="Script" path="res://scenes/menus/game_over.gd" id="1_q8o65"]
+[ext_resource type="Texture2D" uid="uid://bm34x6r6vfgb6" path="res://assets/images/background/skyrender.png" id="2_bdwcc"]
 
 [node name="game_over" type="Control"]
 layout_mode = 3
@@ -13,12 +14,33 @@ script = ExtResource("1_q8o65")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 504.0
-offset_top = 360.0
-offset_right = 602.0
-offset_bottom = 383.0
+offset_left = 792.0
+offset_top = 552.0
+offset_right = 1095.0
+offset_bottom = 621.0
 theme_override_font_sizes/font_size = 50
-text = "Game overw"
+text = "Game over"
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = -16.0
+offset_right = 194.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 25
+text = "Final Time:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 168.0
+offset_right = 1216.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 50
+text = "Game Over
+Thank you for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -30,19 +52,50 @@ text = "Main Menu"
 
 [node name="lblDeaths" type="Label" parent="."]
 layout_mode = 0
-offset_left = 832.0
-offset_top = 728.0
-offset_right = 872.0
-offset_bottom = 751.0
+offset_left = 728.0
+offset_top = 384.0
+offset_right = 785.0
+offset_bottom = 453.0
 theme_override_font_sizes/font_size = 50
 text = "45"
 
+[node name="Label" type="Label" parent="lblDeaths"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 69.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Deaths"
+
 [node name="lblShrimps" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1480.0
-offset_top = 416.0
-offset_right = 1520.0
-offset_bottom = 439.0
+offset_left = 1048.0
+offset_top = 384.0
+offset_right = 1105.0
+offset_bottom = 453.0
 theme_override_font_sizes/font_size = 50
+text = "50
+"
+
+[node name="Label3" type="Label" parent="lblShrimps"]
+layout_mode = 0
+offset_left = -80.0
+offset_top = -32.0
+offset_right = 142.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Shrimps Sacrificed"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -50
+layout_mode = 0
+offset_left = -392.0
+offset_top = -112.0
+offset_right = 5368.0
+offset_bottom = 2768.0
+scale = Vector2(0.468252, 0.468252)
+mouse_filter = 2
+texture = ExtResource("2_bdwcc")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

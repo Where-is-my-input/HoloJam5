@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://7qdt5rb3j1n2"]
+
+[ext_resource type="Script" path="res://scenes/menus/options.gd" id="1_edgis"]
+[ext_resource type="Texture2D" uid="uid://bm34x6r6vfgb6" path="res://assets/images/background/skyrender.png" id="2_ewpvd"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_edgis")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 777.0
+offset_top = -38.0
+offset_right = -777.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="master" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Voice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="va" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "BGM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bgm" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "main menu"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -50
+layout_mode = 0
+offset_left = -392.0
+offset_top = -112.0
+offset_right = 5368.0
+offset_bottom = 2768.0
+scale = Vector2(0.468252, 0.468252)
+mouse_filter = 2
+texture = ExtResource("2_ewpvd")
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/master" to="." method="_on_master_h_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/va" to="." method="_on_va_h_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/bgm" to="." method="_on_bgm_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/sfx" to="." method="_on_sfx_h_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

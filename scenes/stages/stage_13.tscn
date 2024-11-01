@@ -1,0 +1,662 @@
+[gd_scene load_steps=5 format=4 uid="uid://c04jvtwmcpspd"]
+
+[ext_resource type="PackedScene" uid="uid://wf125dnajpfd" path="res://scenes/stages/stage.tscn" id="1_6abor"]
+[ext_resource type="PackedScene" uid="uid://b3lgs6gqc3jpo" path="res://scenes/enemy/enemy.tscn" id="2_i86tb"]
+[ext_resource type="PackedScene" uid="uid://b2umf4h7vpsq0" path="res://scenes/action_resetter/action_resetter.tscn" id="3_t6b8e"]
+[ext_resource type="PackedScene" uid="uid://y75nvyccj2mn" path="res://scenes/spikes/spikes.tscn" id="4_lyv31"]
+
+[node name="stage_13" instance=ExtResource("1_6abor")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAdAAgAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAARAAgAAAAAAAAAAAASAAgAAAAAAAAAAAATAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAVAAgAAAAAAAAAAAAWAAgAAAAAAAAAAAAXAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAZAAgAAAAAAAAAAAAaAAgAAAAAAAAAAAAbAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAeAAgAAAAAAAAAAAAfAAgAAAAAAAAAAAAgAAgAAAAAAAAAAAAhAAgAAAAAAAAAAAAiAAgAAAAAAAAAAAAjAAgAAAAAAAAAAAAkAAgAAAAAAAAAAAAlAAgAAAAAAAAAAAAmAAgAAAAAAAAAAAAnAAgAAAAAAAAAAAAoAAgAAAAAAAAAAAApAAgAAAAAAAAAAAAqAAgAAAAAAAAAAAArAAgAAAAAAAAAAAAsAAgAAAAAAAAAAAAtAAgAAAAAAAAAAAAuAAgAAAAAAAAAAAAvAAgAAAAAAAAAAAAwAAgAAAAAAAAAAAAxAAgAAAAAAAAAAAAyAAgAAAAAAAAAAAAzAAgAAAAAAAAAAAA0AAgAAAAAAAAAAAA1AAgAAAAAAAAAAAA2AAgAAAAAAAAAAAA3AAgAAAAAAAAAAAA4AAgAAAAAAAAAAAA5AAgAAAAAAAAAAAA6AAgAAAAAAAAAAAA7AAgAAAAAAAAAAAA7AAAAAAAAAAAAAAA7AAEAAAAAAAAAAAA7AAIAAAAAAAAAAAA7AAMAAAAAAAAAAAA7AAQAAAAAAAAAAAA7AAUAAAAAAAAAAAA7AAYAAAAAAAAAAAA7AAcAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAApAAAAAAAAAAAAAAAqAAAAAAAAAAAAAAArAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAtAAAAAAAAAAAAAAAuAAAAAAAAAAAAAAAvAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAxAAAAAAAAAAAAAAAyAAAAAAAAAAAAAAAzAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA1AAAAAAAAAAAAAAA2AAAAAAAAAAAAAAA3AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA5AAAAAAAAAAAAAAA6AAAAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAAFAAMAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAcAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAANAAcAAAAAAAAAAAAQAAQAAAAAAAAAAAAbAAQAAAAAAAAAAAAbAAUAAAAAAAAAAAAbAAYAAAAAAAAAAAAbAAcAAAAAAAAAAAAbAAMAAAAAAAAAAAAbAAIAAAAAAAAAAAAeAAQAAAAAAAAAAAAeAAUAAAAAAAAAAAAfAAQAAAAAAAAAAAAfAAUAAAAAAAAAAAAiAAIAAAAAAAAAAAAjAAIAAAAAAAAAAAAkAAIAAAAAAAAAAAAlAAIAAAAAAAAAAAAmAAIAAAAAAAAAAAAnAAIAAAAAAAAAAAAoAAIAAAAAAAAAAAApAAIAAAAAAAAAAAAqAAIAAAAAAAAAAAArAAIAAAAAAAAAAAAsAAIAAAAAAAAAAAAtAAIAAAAAAAAAAAAuAAIAAAAAAAAAAAAvAAIAAAAAAAAAAAAwAAIAAAAAAAAAAAAxAAIAAAAAAAAAAAAyAAIAAAAAAAAAAAAzAAIAAAAAAAAAAAA0AAIAAAAAAAAAAAA1AAIAAAAAAAAAAAA2AAIAAAAAAAAAAAA3AAIAAAAAAAAAAAA4AAIAAAAAAAAAAAAiAAMAAAAAAAAAAAAiAAQAAAAAAAAAAAAjAAMAAAAAAAAAAAAjAAQAAAAAAAAAAAAmAAUAAAAAAAAAAAAmAAYAAAAAAAAAAAAnAAUAAAAAAAAAAAAnAAYAAAAAAAAAAAAmAAQAAAAAAAAAAAAnAAQAAAAAAAAAAAArAAQAAAAAAAAAAAAvAAMAAAAAAAAAAAAvAAUAAAAAAAAAAAAyAAQAAAAAAAAAAAAyAAYAAAAAAAAAAAA0AAUAAAAAAAAAAAA2AAQAAAAAAAAAAAA=")
+
+[node name="end_stage" parent="." index="1"]
+position = Vector2(3704, 288)
+
+[node name="gura" parent="." index="2"]
+position = Vector2(136, 272)
+maxJumps = 2
+maxAirDashes = 1
+trident = true
+installEnabled = true
+
+[node name="Node" type="Node" parent="." index="4"]
+
+[node name="enemy" parent="Node" index="0" instance=ExtResource("2_i86tb")]
+position = Vector2(728, 424)
+
+[node name="action_resetter" parent="Node" index="1" instance=ExtResource("3_t6b8e")]
+position = Vector2(616, 216)
+
+[node name="enemy2" parent="Node" index="2" instance=ExtResource("2_i86tb")]
+position = Vector2(2208, 104)
+
+[node name="enemy3" parent="Node" index="3" instance=ExtResource("2_i86tb")]
+position = Vector2(2344, 104)
+
+[node name="enemy4" parent="Node" index="4" instance=ExtResource("2_i86tb")]
+position = Vector2(2528, 104)
+
+[node name="enemy5" parent="Node" index="5" instance=ExtResource("2_i86tb")]
+position = Vector2(2728, 104)
+
+[node name="enemy6" parent="Node" index="6" instance=ExtResource("2_i86tb")]
+position = Vector2(2920, 104)
+
+[node name="enemy7" parent="Node" index="7" instance=ExtResource("2_i86tb")]
+position = Vector2(3096, 104)
+
+[node name="enemy8" parent="Node" index="8" instance=ExtResource("2_i86tb")]
+position = Vector2(3304, 104)
+
+[node name="enemy9" parent="Node" index="9" instance=ExtResource("2_i86tb")]
+position = Vector2(3512, 104)
+
+[node name="Node2" type="Node" parent="." index="5"]
+
+[node name="spikes" parent="Node2" index="0" instance=ExtResource("4_lyv31")]
+position = Vector2(208, 496)
+
+[node name="spikes2" parent="Node2" index="1" instance=ExtResource("4_lyv31")]
+position = Vector2(240, 496)
+
+[node name="spikes3" parent="Node2" index="2" instance=ExtResource("4_lyv31")]
+position = Vector2(272, 496)
+
+[node name="spikes4" parent="Node2" index="3" instance=ExtResource("4_lyv31")]
+position = Vector2(304, 496)
+
+[node name="spikes5" parent="Node2" index="4" instance=ExtResource("4_lyv31")]
+position = Vector2(400, 496)
+
+[node name="spikes6" parent="Node2" index="5" instance=ExtResource("4_lyv31")]
+position = Vector2(432, 496)
+
+[node name="spikes7" parent="Node2" index="6" instance=ExtResource("4_lyv31")]
+position = Vector2(464, 496)
+
+[node name="spikes8" parent="Node2" index="7" instance=ExtResource("4_lyv31")]
+position = Vector2(496, 496)
+
+[node name="spikes9" parent="Node2" index="8" instance=ExtResource("4_lyv31")]
+position = Vector2(528, 496)
+
+[node name="spikes10" parent="Node2" index="9" instance=ExtResource("4_lyv31")]
+position = Vector2(560, 496)
+
+[node name="spikes11" parent="Node2" index="10" instance=ExtResource("4_lyv31")]
+position = Vector2(592, 496)
+
+[node name="spikes12" parent="Node2" index="11" instance=ExtResource("4_lyv31")]
+position = Vector2(624, 496)
+
+[node name="spikes17" parent="Node2" index="12" instance=ExtResource("4_lyv31")]
+position = Vector2(656, 304)
+
+[node name="spikes18" parent="Node2" index="13" instance=ExtResource("4_lyv31")]
+position = Vector2(688, 304)
+
+[node name="spikes19" parent="Node2" index="14" instance=ExtResource("4_lyv31")]
+position = Vector2(464, 176)
+
+[node name="spikes20" parent="Node2" index="15" instance=ExtResource("4_lyv31")]
+position = Vector2(496, 176)
+
+[node name="spikes21" parent="Node2" index="16" instance=ExtResource("4_lyv31")]
+position = Vector2(400, 176)
+
+[node name="spikes22" parent="Node2" index="17" instance=ExtResource("4_lyv31")]
+position = Vector2(432, 176)
+
+[node name="spikes23" parent="Node2" index="18" instance=ExtResource("4_lyv31")]
+position = Vector2(336, 176)
+
+[node name="spikes24" parent="Node2" index="19" instance=ExtResource("4_lyv31")]
+position = Vector2(368, 176)
+
+[node name="spikes25" parent="Node2" index="20" instance=ExtResource("4_lyv31")]
+position = Vector2(784, 496)
+
+[node name="spikes26" parent="Node2" index="21" instance=ExtResource("4_lyv31")]
+position = Vector2(816, 496)
+
+[node name="spikes13" parent="Node2" index="22" instance=ExtResource("4_lyv31")]
+position = Vector2(656, 496)
+
+[node name="spikes14" parent="Node2" index="23" instance=ExtResource("4_lyv31")]
+position = Vector2(688, 496)
+
+[node name="spikes15" parent="Node2" index="24" instance=ExtResource("4_lyv31")]
+position = Vector2(720, 496)
+
+[node name="spikes16" parent="Node2" index="25" instance=ExtResource("4_lyv31")]
+position = Vector2(752, 496)
+
+[node name="spikes27" parent="Node2" index="26" instance=ExtResource("4_lyv31")]
+position = Vector2(912, 496)
+
+[node name="spikes28" parent="Node2" index="27" instance=ExtResource("4_lyv31")]
+position = Vector2(944, 496)
+
+[node name="spikes29" parent="Node2" index="28" instance=ExtResource("4_lyv31")]
+position = Vector2(976, 496)
+
+[node name="spikes30" parent="Node2" index="29" instance=ExtResource("4_lyv31")]
+position = Vector2(1008, 496)
+
+[node name="spikes31" parent="Node2" index="30" instance=ExtResource("4_lyv31")]
+position = Vector2(1040, 496)
+
+[node name="spikes32" parent="Node2" index="31" instance=ExtResource("4_lyv31")]
+position = Vector2(1072, 496)
+
+[node name="spikes33" parent="Node2" index="32" instance=ExtResource("4_lyv31")]
+position = Vector2(1104, 496)
+
+[node name="spikes34" parent="Node2" index="33" instance=ExtResource("4_lyv31")]
+position = Vector2(1136, 496)
+
+[node name="spikes35" parent="Node2" index="34" instance=ExtResource("4_lyv31")]
+position = Vector2(1296, 496)
+
+[node name="spikes36" parent="Node2" index="35" instance=ExtResource("4_lyv31")]
+position = Vector2(1328, 496)
+
+[node name="spikes37" parent="Node2" index="36" instance=ExtResource("4_lyv31")]
+position = Vector2(1168, 496)
+
+[node name="spikes38" parent="Node2" index="37" instance=ExtResource("4_lyv31")]
+position = Vector2(1200, 496)
+
+[node name="spikes39" parent="Node2" index="38" instance=ExtResource("4_lyv31")]
+position = Vector2(1232, 496)
+
+[node name="spikes40" parent="Node2" index="39" instance=ExtResource("4_lyv31")]
+position = Vector2(1264, 496)
+
+[node name="spikes41" parent="Node2" index="40" instance=ExtResource("4_lyv31")]
+position = Vector2(1360, 496)
+
+[node name="spikes42" parent="Node2" index="41" instance=ExtResource("4_lyv31")]
+position = Vector2(1392, 496)
+
+[node name="spikes43" parent="Node2" index="42" instance=ExtResource("4_lyv31")]
+position = Vector2(1424, 496)
+
+[node name="spikes44" parent="Node2" index="43" instance=ExtResource("4_lyv31")]
+position = Vector2(1456, 496)
+
+[node name="spikes45" parent="Node2" index="44" instance=ExtResource("4_lyv31")]
+position = Vector2(1488, 496)
+
+[node name="spikes46" parent="Node2" index="45" instance=ExtResource("4_lyv31")]
+position = Vector2(1520, 496)
+
+[node name="spikes47" parent="Node2" index="46" instance=ExtResource("4_lyv31")]
+position = Vector2(1552, 496)
+
+[node name="spikes48" parent="Node2" index="47" instance=ExtResource("4_lyv31")]
+position = Vector2(1584, 496)
+
+[node name="spikes51" parent="Node2" index="48" instance=ExtResource("4_lyv31")]
+position = Vector2(1616, 496)
+
+[node name="spikes52" parent="Node2" index="49" instance=ExtResource("4_lyv31")]
+position = Vector2(1648, 496)
+
+[node name="spikes53" parent="Node2" index="50" instance=ExtResource("4_lyv31")]
+position = Vector2(1680, 496)
+
+[node name="spikes54" parent="Node2" index="51" instance=ExtResource("4_lyv31")]
+position = Vector2(1712, 496)
+
+[node name="spikes55" parent="Node2" index="52" instance=ExtResource("4_lyv31")]
+position = Vector2(1808, 496)
+
+[node name="spikes56" parent="Node2" index="53" instance=ExtResource("4_lyv31")]
+position = Vector2(1840, 496)
+
+[node name="spikes57" parent="Node2" index="54" instance=ExtResource("4_lyv31")]
+position = Vector2(1872, 496)
+
+[node name="spikes58" parent="Node2" index="55" instance=ExtResource("4_lyv31")]
+position = Vector2(1904, 496)
+
+[node name="spikes59" parent="Node2" index="56" instance=ExtResource("4_lyv31")]
+position = Vector2(1936, 496)
+
+[node name="spikes60" parent="Node2" index="57" instance=ExtResource("4_lyv31")]
+position = Vector2(1968, 496)
+
+[node name="spikes61" parent="Node2" index="58" instance=ExtResource("4_lyv31")]
+position = Vector2(2000, 496)
+
+[node name="spikes62" parent="Node2" index="59" instance=ExtResource("4_lyv31")]
+position = Vector2(2032, 496)
+
+[node name="spikes63" parent="Node2" index="60" instance=ExtResource("4_lyv31")]
+position = Vector2(2192, 496)
+
+[node name="spikes64" parent="Node2" index="61" instance=ExtResource("4_lyv31")]
+position = Vector2(2224, 496)
+
+[node name="spikes65" parent="Node2" index="62" instance=ExtResource("4_lyv31")]
+position = Vector2(2064, 496)
+
+[node name="spikes66" parent="Node2" index="63" instance=ExtResource("4_lyv31")]
+position = Vector2(2096, 496)
+
+[node name="spikes67" parent="Node2" index="64" instance=ExtResource("4_lyv31")]
+position = Vector2(2128, 496)
+
+[node name="spikes68" parent="Node2" index="65" instance=ExtResource("4_lyv31")]
+position = Vector2(2160, 496)
+
+[node name="spikes69" parent="Node2" index="66" instance=ExtResource("4_lyv31")]
+position = Vector2(2256, 496)
+
+[node name="spikes70" parent="Node2" index="67" instance=ExtResource("4_lyv31")]
+position = Vector2(2288, 496)
+
+[node name="spikes71" parent="Node2" index="68" instance=ExtResource("4_lyv31")]
+position = Vector2(2320, 496)
+
+[node name="spikes72" parent="Node2" index="69" instance=ExtResource("4_lyv31")]
+position = Vector2(2352, 496)
+
+[node name="spikes73" parent="Node2" index="70" instance=ExtResource("4_lyv31")]
+position = Vector2(2384, 496)
+
+[node name="spikes74" parent="Node2" index="71" instance=ExtResource("4_lyv31")]
+position = Vector2(2416, 496)
+
+[node name="spikes75" parent="Node2" index="72" instance=ExtResource("4_lyv31")]
+position = Vector2(2448, 496)
+
+[node name="spikes76" parent="Node2" index="73" instance=ExtResource("4_lyv31")]
+position = Vector2(2480, 496)
+
+[node name="spikes77" parent="Node2" index="74" instance=ExtResource("4_lyv31")]
+position = Vector2(2640, 496)
+
+[node name="spikes78" parent="Node2" index="75" instance=ExtResource("4_lyv31")]
+position = Vector2(2672, 496)
+
+[node name="spikes79" parent="Node2" index="76" instance=ExtResource("4_lyv31")]
+position = Vector2(2512, 496)
+
+[node name="spikes80" parent="Node2" index="77" instance=ExtResource("4_lyv31")]
+position = Vector2(2544, 496)
+
+[node name="spikes81" parent="Node2" index="78" instance=ExtResource("4_lyv31")]
+position = Vector2(2576, 496)
+
+[node name="spikes82" parent="Node2" index="79" instance=ExtResource("4_lyv31")]
+position = Vector2(2608, 496)
+
+[node name="spikes83" parent="Node2" index="80" instance=ExtResource("4_lyv31")]
+position = Vector2(2704, 496)
+
+[node name="spikes84" parent="Node2" index="81" instance=ExtResource("4_lyv31")]
+position = Vector2(2736, 496)
+
+[node name="spikes85" parent="Node2" index="82" instance=ExtResource("4_lyv31")]
+position = Vector2(2768, 496)
+
+[node name="spikes86" parent="Node2" index="83" instance=ExtResource("4_lyv31")]
+position = Vector2(2800, 496)
+
+[node name="spikes87" parent="Node2" index="84" instance=ExtResource("4_lyv31")]
+position = Vector2(2832, 496)
+
+[node name="spikes88" parent="Node2" index="85" instance=ExtResource("4_lyv31")]
+position = Vector2(2864, 496)
+
+[node name="spikes89" parent="Node2" index="86" instance=ExtResource("4_lyv31")]
+position = Vector2(2896, 496)
+
+[node name="spikes90" parent="Node2" index="87" instance=ExtResource("4_lyv31")]
+position = Vector2(2928, 496)
+
+[node name="spikes91" parent="Node2" index="88" instance=ExtResource("4_lyv31")]
+position = Vector2(3088, 496)
+
+[node name="spikes92" parent="Node2" index="89" instance=ExtResource("4_lyv31")]
+position = Vector2(3120, 496)
+
+[node name="spikes93" parent="Node2" index="90" instance=ExtResource("4_lyv31")]
+position = Vector2(2960, 496)
+
+[node name="spikes94" parent="Node2" index="91" instance=ExtResource("4_lyv31")]
+position = Vector2(2992, 496)
+
+[node name="spikes95" parent="Node2" index="92" instance=ExtResource("4_lyv31")]
+position = Vector2(3024, 496)
+
+[node name="spikes96" parent="Node2" index="93" instance=ExtResource("4_lyv31")]
+position = Vector2(3056, 496)
+
+[node name="spikes163" parent="Node2" index="94" instance=ExtResource("4_lyv31")]
+position = Vector2(3024, 304)
+
+[node name="spikes164" parent="Node2" index="95" instance=ExtResource("4_lyv31")]
+position = Vector2(3056, 304)
+
+[node name="spikes165" parent="Node2" index="96" instance=ExtResource("4_lyv31")]
+position = Vector2(3216, 368)
+
+[node name="spikes166" parent="Node2" index="97" instance=ExtResource("4_lyv31")]
+position = Vector2(3248, 368)
+
+[node name="spikes167" parent="Node2" index="98" instance=ExtResource("4_lyv31")]
+position = Vector2(3472, 240)
+
+[node name="spikes168" parent="Node2" index="99" instance=ExtResource("4_lyv31")]
+position = Vector2(3504, 240)
+
+[node name="spikes169" parent="Node2" index="100" instance=ExtResource("4_lyv31")]
+position = Vector2(3344, 304)
+
+[node name="spikes170" parent="Node2" index="101" instance=ExtResource("4_lyv31")]
+position = Vector2(3376, 304)
+
+[node name="spikes97" parent="Node2" index="102" instance=ExtResource("4_lyv31")]
+position = Vector2(3152, 496)
+
+[node name="spikes98" parent="Node2" index="103" instance=ExtResource("4_lyv31")]
+position = Vector2(3184, 496)
+
+[node name="spikes99" parent="Node2" index="104" instance=ExtResource("4_lyv31")]
+position = Vector2(3216, 496)
+
+[node name="spikes100" parent="Node2" index="105" instance=ExtResource("4_lyv31")]
+position = Vector2(3248, 496)
+
+[node name="spikes101" parent="Node2" index="106" instance=ExtResource("4_lyv31")]
+position = Vector2(3280, 496)
+
+[node name="spikes102" parent="Node2" index="107" instance=ExtResource("4_lyv31")]
+position = Vector2(3312, 496)
+
+[node name="spikes103" parent="Node2" index="108" instance=ExtResource("4_lyv31")]
+position = Vector2(3344, 496)
+
+[node name="spikes104" parent="Node2" index="109" instance=ExtResource("4_lyv31")]
+position = Vector2(3376, 496)
+
+[node name="spikes105" parent="Node2" index="110" instance=ExtResource("4_lyv31")]
+position = Vector2(3536, 496)
+
+[node name="spikes106" parent="Node2" index="111" instance=ExtResource("4_lyv31")]
+position = Vector2(3568, 496)
+
+[node name="spikes107" parent="Node2" index="112" instance=ExtResource("4_lyv31")]
+position = Vector2(3408, 496)
+
+[node name="spikes108" parent="Node2" index="113" instance=ExtResource("4_lyv31")]
+position = Vector2(3440, 496)
+
+[node name="spikes117" parent="Node2" index="114" instance=ExtResource("4_lyv31")]
+position = Vector2(2192, 80)
+rotation = 3.14159
+
+[node name="spikes118" parent="Node2" index="115" instance=ExtResource("4_lyv31")]
+position = Vector2(2224, 80)
+rotation = 3.14159
+
+[node name="spikes119" parent="Node2" index="116" instance=ExtResource("4_lyv31")]
+position = Vector2(2256, 80)
+rotation = 3.14159
+
+[node name="spikes120" parent="Node2" index="117" instance=ExtResource("4_lyv31")]
+position = Vector2(2288, 80)
+rotation = 3.14159
+
+[node name="spikes121" parent="Node2" index="118" instance=ExtResource("4_lyv31")]
+position = Vector2(2320, 80)
+rotation = 3.14159
+
+[node name="spikes122" parent="Node2" index="119" instance=ExtResource("4_lyv31")]
+position = Vector2(2352, 80)
+rotation = 3.14159
+
+[node name="spikes123" parent="Node2" index="120" instance=ExtResource("4_lyv31")]
+position = Vector2(2384, 80)
+rotation = 3.14159
+
+[node name="spikes124" parent="Node2" index="121" instance=ExtResource("4_lyv31")]
+position = Vector2(2416, 80)
+rotation = 3.14159
+
+[node name="spikes125" parent="Node2" index="122" instance=ExtResource("4_lyv31")]
+position = Vector2(2448, 80)
+rotation = 3.14159
+
+[node name="spikes126" parent="Node2" index="123" instance=ExtResource("4_lyv31")]
+position = Vector2(2480, 80)
+rotation = 3.14159
+
+[node name="spikes127" parent="Node2" index="124" instance=ExtResource("4_lyv31")]
+position = Vector2(2512, 80)
+rotation = 3.14159
+
+[node name="spikes128" parent="Node2" index="125" instance=ExtResource("4_lyv31")]
+position = Vector2(2544, 80)
+rotation = 3.14159
+
+[node name="spikes129" parent="Node2" index="126" instance=ExtResource("4_lyv31")]
+position = Vector2(2576, 80)
+rotation = 3.14159
+
+[node name="spikes130" parent="Node2" index="127" instance=ExtResource("4_lyv31")]
+position = Vector2(2608, 80)
+rotation = 3.14159
+
+[node name="spikes131" parent="Node2" index="128" instance=ExtResource("4_lyv31")]
+position = Vector2(2640, 80)
+rotation = 3.14159
+
+[node name="spikes132" parent="Node2" index="129" instance=ExtResource("4_lyv31")]
+position = Vector2(2672, 80)
+rotation = 3.14159
+
+[node name="spikes133" parent="Node2" index="130" instance=ExtResource("4_lyv31")]
+position = Vector2(2704, 80)
+rotation = 3.14159
+
+[node name="spikes134" parent="Node2" index="131" instance=ExtResource("4_lyv31")]
+position = Vector2(2736, 80)
+rotation = 3.14159
+
+[node name="spikes135" parent="Node2" index="132" instance=ExtResource("4_lyv31")]
+position = Vector2(2768, 80)
+rotation = 3.14159
+
+[node name="spikes136" parent="Node2" index="133" instance=ExtResource("4_lyv31")]
+position = Vector2(2800, 80)
+rotation = 3.14159
+
+[node name="spikes137" parent="Node2" index="134" instance=ExtResource("4_lyv31")]
+position = Vector2(2832, 80)
+rotation = 3.14159
+
+[node name="spikes138" parent="Node2" index="135" instance=ExtResource("4_lyv31")]
+position = Vector2(2864, 80)
+rotation = 3.14159
+
+[node name="spikes139" parent="Node2" index="136" instance=ExtResource("4_lyv31")]
+position = Vector2(2896, 80)
+rotation = 3.14159
+
+[node name="spikes140" parent="Node2" index="137" instance=ExtResource("4_lyv31")]
+position = Vector2(2928, 80)
+rotation = 3.14159
+
+[node name="spikes141" parent="Node2" index="138" instance=ExtResource("4_lyv31")]
+position = Vector2(2960, 80)
+rotation = 3.14159
+
+[node name="spikes142" parent="Node2" index="139" instance=ExtResource("4_lyv31")]
+position = Vector2(2992, 80)
+rotation = 3.14159
+
+[node name="spikes143" parent="Node2" index="140" instance=ExtResource("4_lyv31")]
+position = Vector2(3024, 80)
+rotation = 3.14159
+
+[node name="spikes144" parent="Node2" index="141" instance=ExtResource("4_lyv31")]
+position = Vector2(3056, 80)
+rotation = 3.14159
+
+[node name="spikes145" parent="Node2" index="142" instance=ExtResource("4_lyv31")]
+position = Vector2(3088, 80)
+rotation = 3.14159
+
+[node name="spikes146" parent="Node2" index="143" instance=ExtResource("4_lyv31")]
+position = Vector2(3120, 80)
+rotation = 3.14159
+
+[node name="spikes147" parent="Node2" index="144" instance=ExtResource("4_lyv31")]
+position = Vector2(3152, 80)
+rotation = 3.14159
+
+[node name="spikes148" parent="Node2" index="145" instance=ExtResource("4_lyv31")]
+position = Vector2(3184, 80)
+rotation = 3.14159
+
+[node name="spikes149" parent="Node2" index="146" instance=ExtResource("4_lyv31")]
+position = Vector2(3216, 80)
+rotation = 3.14159
+
+[node name="spikes150" parent="Node2" index="147" instance=ExtResource("4_lyv31")]
+position = Vector2(3248, 80)
+rotation = 3.14159
+
+[node name="spikes151" parent="Node2" index="148" instance=ExtResource("4_lyv31")]
+position = Vector2(3280, 80)
+rotation = 3.14159
+
+[node name="spikes152" parent="Node2" index="149" instance=ExtResource("4_lyv31")]
+position = Vector2(3312, 80)
+rotation = 3.14159
+
+[node name="spikes153" parent="Node2" index="150" instance=ExtResource("4_lyv31")]
+position = Vector2(3344, 80)
+rotation = 3.14159
+
+[node name="spikes154" parent="Node2" index="151" instance=ExtResource("4_lyv31")]
+position = Vector2(3376, 80)
+rotation = 3.14159
+
+[node name="spikes155" parent="Node2" index="152" instance=ExtResource("4_lyv31")]
+position = Vector2(3408, 80)
+rotation = 3.14159
+
+[node name="spikes156" parent="Node2" index="153" instance=ExtResource("4_lyv31")]
+position = Vector2(3440, 80)
+rotation = 3.14159
+
+[node name="spikes157" parent="Node2" index="154" instance=ExtResource("4_lyv31")]
+position = Vector2(3472, 80)
+rotation = 3.14159
+
+[node name="spikes158" parent="Node2" index="155" instance=ExtResource("4_lyv31")]
+position = Vector2(3504, 80)
+rotation = 3.14159
+
+[node name="spikes159" parent="Node2" index="156" instance=ExtResource("4_lyv31")]
+position = Vector2(3536, 80)
+rotation = 3.14159
+
+[node name="spikes160" parent="Node2" index="157" instance=ExtResource("4_lyv31")]
+position = Vector2(3568, 80)
+rotation = 3.14159
+
+[node name="spikes161" parent="Node2" index="158" instance=ExtResource("4_lyv31")]
+position = Vector2(3600, 80)
+rotation = 3.14159
+
+[node name="spikes162" parent="Node2" index="159" instance=ExtResource("4_lyv31")]
+position = Vector2(3632, 80)
+rotation = 3.14159
+
+[node name="spikes109" parent="Node2" index="160" instance=ExtResource("4_lyv31")]
+position = Vector2(3472, 496)
+
+[node name="spikes110" parent="Node2" index="161" instance=ExtResource("4_lyv31")]
+position = Vector2(3504, 496)
+
+[node name="spikes111" parent="Node2" index="162" instance=ExtResource("4_lyv31")]
+position = Vector2(3600, 496)
+
+[node name="spikes112" parent="Node2" index="163" instance=ExtResource("4_lyv31")]
+position = Vector2(3632, 496)
+
+[node name="spikes113" parent="Node2" index="164" instance=ExtResource("4_lyv31")]
+position = Vector2(3664, 496)
+
+[node name="spikes114" parent="Node2" index="165" instance=ExtResource("4_lyv31")]
+position = Vector2(3696, 496)
+
+[node name="spikes115" parent="Node2" index="166" instance=ExtResource("4_lyv31")]
+position = Vector2(3728, 496)
+
+[node name="spikes116" parent="Node2" index="167" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 496)
+
+[node name="Node3" type="Node" parent="." index="6"]
+
+[node name="spikes" parent="Node3" index="0" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 80)
+rotation = -1.5708
+
+[node name="spikes2" parent="Node3" index="1" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 112)
+rotation = -1.5708
+
+[node name="spikes3" parent="Node3" index="2" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 144)
+rotation = -1.5708
+
+[node name="spikes4" parent="Node3" index="3" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 176)
+rotation = -1.5708
+
+[node name="spikes5" parent="Node3" index="4" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 208)
+rotation = -1.5708
+
+[node name="spikes6" parent="Node3" index="5" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 240)
+rotation = -1.5708
+
+[node name="spikes7" parent="Node3" index="6" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 272)
+rotation = -1.5708
+
+[node name="spikes8" parent="Node3" index="7" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 304)
+rotation = -1.5708
+
+[node name="spikes9" parent="Node3" index="8" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 336)
+rotation = -1.5708
+
+[node name="spikes10" parent="Node3" index="9" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 368)
+rotation = -1.5708
+
+[node name="spikes11" parent="Node3" index="10" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 400)
+rotation = -1.5708
+
+[node name="spikes12" parent="Node3" index="11" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 432)
+rotation = -1.5708
+
+[node name="action_resetter" parent="Node3" index="12" instance=ExtResource("3_t6b8e")]
+position = Vector2(2368, 272)
+
+[node name="spikes13" parent="Node3" index="13" instance=ExtResource("4_lyv31")]
+position = Vector2(3760, 464)
+rotation = -1.5708

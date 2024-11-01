@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qb3g3u6ry7kn"
+path="res://.godot/imported/underwater theme 2nd variation (my preferred).ogg-7466372ae3edb1c022f4ff75dd2d8cec.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/bgm/in_game/underwater theme 2nd variation (my preferred).ogg"
+dest_files=["res://.godot/imported/underwater theme 2nd variation (my preferred).ogg-7466372ae3edb1c022f4ff75dd2d8cec.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

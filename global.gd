@@ -4,13 +4,30 @@ var deaths:int = 0
 var shrimpsSacrificed:int = 0
 var currentStage:int = 1
 var maxJumps:int = 2
-var maxDashes:int = 0
+var maxDashes:int = 1
 var install:bool = false
 var trident:bool = false
+var audio:AudioStreamPlayer
+
+const AUDIO_IN_GAME = preload("res://scenes/audio/audio_in_game.tscn")
+const AUDIO_MAIN_MENU = preload("res://scenes/audio/audio_main_menu.tscn")
+
+func _ready():
+	#RenderingServer.set_default_clear_color(Color.BLACK)
+	#bgm = AUDIO_MAIN_MENU.instantiate()
+	add_child(AUDIO_MAIN_MENU.instantiate())
+	#process_mode = ProcessMode.PROCESS_MODE_ALWAYS
+	#setBGM()
+
+func setBGM(v = false):
+	for c in get_children():
+		c.queue_free()
+	#bgm = AUDIO_MAIN_MENU.instantiate() if v else AUDIO_IN_GAME.instantiate()
+	add_child(AUDIO_MAIN_MENU.instantiate() if v else AUDIO_IN_GAME.instantiate())
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("reset"):
-		get_tree().change_scene_to_file("res://scenes/debug.tscn")
+		get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
 
 func reset():
 	shrimpsSacrificed = 0

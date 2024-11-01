@@ -13,6 +13,7 @@ config_version=5
 config/name="HoloJam5"
 run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://assets/images/logo/wimiProductions.png"
 config/icon="res://icon.svg"
 
 [autoload]

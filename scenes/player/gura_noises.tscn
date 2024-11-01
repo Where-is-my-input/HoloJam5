@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://scenes/player/gura_noises.gd" id="1_cucwp"]
 
 [node name="gura_noises" type="AudioStreamPlayer2D"]
+bus = &"VA"
 script = ExtResource("1_cucwp")

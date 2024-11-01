@@ -6,6 +6,7 @@ extends Area2D
 func _on_body_entered(body) -> void:
 	if body.is_in_group("Player"):
 		body.resetActions()
+		body.hitStop = 5
 		spawnState()
 		tmr_respawn.start(respawn)
 

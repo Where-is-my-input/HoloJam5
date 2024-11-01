@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3lgs6gqc3jpo"]
+[gd_scene load_steps=8 format=3 uid="uid://b3lgs6gqc3jpo"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_6s00x"]
 [ext_resource type="Texture2D" uid="uid://tr0827l6ldjc" path="res://assets/images/Shrimp.png" id="2_8qft5"]
+[ext_resource type="AudioStream" uid="uid://cufyix7wu03my" path="res://assets/audio/sfx/hit/hit.wav" id="3_oa8yg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lnmk"]
 
@@ -63,5 +64,9 @@ libraries = {
 "": SubResource("AnimationLibrary_yh5yu")
 }
 autoplay = "idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_oa8yg")
+bus = &"SFX"
 
 [connection signal="timeout" from="tmrRespawn" to="." method="_on_tmr_respawn_timeout"]

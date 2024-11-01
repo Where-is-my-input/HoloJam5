@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var tmr_respawn: Timer = $tmrRespawn
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var maxHp:int = 1
 @export var respawn:float = 3
@@ -11,6 +12,7 @@ func _ready() -> void:
 	hp = maxHp
 
 func getHit():
+	audio_stream_player_2d.play()
 	hp -= 1
 	if hp <= 0:
 		Global.shrimpsSacrificed += 1

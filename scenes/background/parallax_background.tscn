@@ -2,11 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://ctexnsw801lo6" path="res://assets/images/background/Underwater BG Blank.png" id="1_7vdca"]
 
-[node name="ParallaxBackground" type="ParallaxBackground"]
+[node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(1.005, 0)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+self_modulate = Color(1, 1, 1, 0.356863)
 position = Vector2(944, 496)
 texture = ExtResource("1_7vdca")

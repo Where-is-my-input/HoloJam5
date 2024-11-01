@@ -18,9 +18,6 @@ maxJumps = 2
 trident = true
 installEnabled = true
 
-[node name="ParallaxBackground" parent="." index="3"]
-visible = false
-
 [node name="enemy" parent="." index="4" instance=ExtResource("2_m647c")]
 position = Vector2(880, 368)
 

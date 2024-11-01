@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://gobgc7nascfc"]
+
+[ext_resource type="AudioStream" uid="uid://c60dcsx4va30e" path="res://assets/audio/bgm/in_game/ambient2(Nautilus).mp3" id="1_bl7fo"]
+[ext_resource type="AudioStream" uid="uid://bu7j08ucdpakl" path="res://assets/audio/bgm/ObservingTheStar.ogg" id="1_p3fw4"]
+[ext_resource type="AudioStream" uid="uid://c4wuw03dmtbpr" path="res://assets/audio/bgm/in_game/Cleyton RX - Underwater.wav" id="2_gs2vj"]
+[ext_resource type="Script" path="res://scenes/audio/audio_in_game.gd" id="4_oaa48"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ovqif"]
+streams_count = 3
+stream_0/stream = ExtResource("1_bl7fo")
+stream_1/stream = ExtResource("2_gs2vj")
+stream_2/stream = ExtResource("1_p3fw4")
+
+[node name="audioInGame" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamRandomizer_ovqif")
+autoplay = true
+bus = &"BGM"
+script = ExtResource("4_oaa48")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
