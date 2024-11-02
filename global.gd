@@ -8,9 +8,12 @@ var maxDashes:int = 1
 var install:bool = false
 var trident:bool = false
 var audio:AudioStreamPlayer
+var gameCleared:bool = false
 
 const AUDIO_IN_GAME = preload("res://scenes/audio/audio_in_game.tscn")
 const AUDIO_MAIN_MENU = preload("res://scenes/audio/audio_main_menu.tscn")
+
+var palette:Array = [Color(0.204, 0.455, 0.62, 1), Color(0.294, 0.557, 0.682, 1), Color(0.388, 0.816, 0.831, 1), Color(0.522, 0.78, 0.906, 1)]
 
 func _ready():
 	#RenderingServer.set_default_clear_color(Color.BLACK)

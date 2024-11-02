@@ -11,7 +11,7 @@
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABAAAAAAAAAAAAABAAAAAAAAAAAAAAABABAAAAAAAAAAAAACAAAAAAAAAAAAAAACABAAAAAAAAAAAAADAAAAAAAAAAAAAAADABAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEABAAAAAAAAAAAAAFAAAAAAAAAAAAAAAFABAAAAAAAAAAAAAGAAAAAAAAAAAAAAAGABAAAAAAAAAAAAAHAAAAAAAAAAAAAAAHABAAAAAAAAAAAAAIAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAJAAAAAAAAAAAAAAAJABAAAAAAAAAAAAAKAAAAAAAAAAAAAAAKABAAAAAAAAAAAAALAAAAAAAAAAAAAAALABAAAAAAAAAAAAAMAAAAAAAAAAAAAAAMABAAAAAAAAAAAAANAAAAAAAAAAAAAAANABAAAAAAAAAAAAAOAAAAAAAAAAAAAAAOABAAAAAAAAAAAAAPAAAAAAAAAAAAAAAPABAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQABAAAAAAAAAAAAARAAAAAAAAAAAAAAARABAAAAAAAAAAAAASAAAAAAAAAAAAAAASABAAAAAAAAAAAAATAAAAAAAAAAAAAAATABAAAAAAAAAAAAAUAAAAAAAAAAAAAAAUABAAAAAAAAAAAAAVAAAAAAAAAAAAAAAVABAAAAAAAAAAAAAWAAAAAAAAAAAAAAAWABAAAAAAAAAAAAAXAAAAAAAAAAAAAAAXABAAAAAAAAAAAAAYAAAAAAAAAAAAAAAYABAAAAAAAAAAAAAZAAAAAAAAAAAAAAAZABAAAAAAAAAAAAAaAAAAAAAAAAAAAAAaABAAAAAAAAAAAAAbAAAAAAAAAAAAAAAbABAAAAAAAAAAAAAcAAAAAAAAAAAAAAAcABAAAAAAAAAAAAAEAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAANAA4AAAAAAAAAAAANAA8AAAAAAAAAAAAOAA4AAAAAAAAAAAAOAA8AAAAAAAAAAAAQAAgAAAAAAAAAAAARAAgAAAAAAAAAAAASAAgAAAAAAAAAAAAQAA4AAAAAAAAAAAAWAA4AAAAAAAAAAAAaAA4AAAAAAAAAAAATAAUAAAAAAAAAAAATAAYAAAAAAAAAAAATAAcAAAAAAAAAAAATAAgAAAAAAAAAAAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAATAAsAAAAAAAAAAAATAAwAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAAAAAATAA4AAAAAAAAAAAATAA8AAAAAAAAAAAAUAA4AAAAAAAAAAAAUAA8AAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAMAAAAAAAAAAAASAAMAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAMAAAAAAAAAAAATAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAXAAQAAAAAAAAAAAAXAAUAAAAAAAAAAAAXAAYAAAAAAAAAAAAXAAcAAAAAAAAAAAAXAAgAAAAAAAAAAAAXAAkAAAAAAAAAAAAXAAoAAAAAAAAAAAAXAAsAAAAAAAAAAAAXAAwAAAAAAAAAAAAXAA0AAAAAAAAAAAAXAA4AAAAAAAAAAAAZAAQAAAAAAAAAAAAZAAUAAAAAAAAAAAAZAAYAAAAAAAAAAAAZAAcAAAAAAAAAAAAZAAgAAAAAAAAAAAAZAAkAAAAAAAAAAAAZAAoAAAAAAAAAAAAZAAsAAAAAAAAAAAAZAAwAAAAAAAAAAAAZAA0AAAAAAAAAAAAZAA4AAAAAAAAAAAAVAAsAAAAAAAAAAAAWAAgAAAAAAAAAAAAVAAUAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAIAAAAAAAAAAAAcAAMAAAAAAAAAAAAcAAQAAAAAAAAAAAAcAAUAAAAAAAAAAAAcAAYAAAAAAAAAAAAcAAcAAAAAAAAAAAAcAAgAAAAAAAAAAAAcAAkAAAAAAAAAAAAcAAoAAAAAAAAAAAAcAAsAAAAAAAAAAAAcAAwAAAAAAAAAAAAcAA0AAAAAAAAAAAAcAA4AAAAAAAAAAAAcAA8AAAAAAAAAAAAbAAUAAAAAAAAAAAAaAAgAAAAAAAAAAAAbAAsAAAAAAAAAAAA=")
 
 [node name="end_stage" parent="." index="1"]
-position = Vector2(1728, 840)
+position = Vector2(1568, 800)
 
 [node name="gura" parent="." index="2"]
 maxJumps = 2
@@ -25,7 +25,7 @@ position = Vector2(880, 368)
 position = Vector2(640, 896)
 
 [node name="air_dash" parent="." index="6" instance=ExtResource("3_7y3xp")]
-position = Vector2(1568, 176)
+position = Vector2(1568, 384)
 
 [node name="Node" type="Node" parent="." index="7"]
 
@@ -210,51 +210,75 @@ rotation = 1.5708
 position = Vector2(1360, 272)
 rotation = 1.5708
 
-[node name="spikes55" parent="Node" index="57" instance=ExtResource("4_hgwt7")]
+[node name="spikes73" parent="Node" index="57" instance=ExtResource("4_hgwt7")]
+position = Vector2(1776, 560)
+rotation = -1.5708
+
+[node name="spikes74" parent="Node" index="58" instance=ExtResource("4_hgwt7")]
+position = Vector2(1776, 528)
+rotation = -1.5708
+
+[node name="spikes75" parent="Node" index="59" instance=ExtResource("4_hgwt7")]
+position = Vector2(1776, 816)
+rotation = -1.5708
+
+[node name="spikes76" parent="Node" index="60" instance=ExtResource("4_hgwt7")]
+position = Vector2(1776, 784)
+rotation = -1.5708
+
+[node name="spikes77" parent="Node" index="61" instance=ExtResource("4_hgwt7")]
+position = Vector2(1776, 304)
+rotation = -1.5708
+
+[node name="spikes78" parent="Node" index="62" instance=ExtResource("4_hgwt7")]
+position = Vector2(1776, 272)
+rotation = -1.5708
+
+[node name="spikes55" parent="Node" index="63" instance=ExtResource("4_hgwt7")]
 position = Vector2(1104, 944)
 rotation = 1.5708
 
-[node name="spikes56" parent="Node" index="58" instance=ExtResource("4_hgwt7")]
+[node name="spikes56" parent="Node" index="64" instance=ExtResource("4_hgwt7")]
 position = Vector2(1104, 912)
 rotation = 1.5708
 
-[node name="spikes57" parent="Node" index="59" instance=ExtResource("4_hgwt7")]
+[node name="spikes57" parent="Node" index="65" instance=ExtResource("4_hgwt7")]
 position = Vector2(720, 816)
 rotation = 1.5708
 
-[node name="spikes58" parent="Node" index="60" instance=ExtResource("4_hgwt7")]
+[node name="spikes58" parent="Node" index="66" instance=ExtResource("4_hgwt7")]
 position = Vector2(720, 784)
 rotation = 1.5708
 
-[node name="spikes59" parent="Node" index="61" instance=ExtResource("4_hgwt7")]
+[node name="spikes59" parent="Node" index="67" instance=ExtResource("4_hgwt7")]
 position = Vector2(720, 752)
 rotation = 1.5708
 
-[node name="spikes60" parent="Node" index="62" instance=ExtResource("4_hgwt7")]
+[node name="spikes60" parent="Node" index="68" instance=ExtResource("4_hgwt7")]
 position = Vector2(720, 720)
 rotation = 1.5708
 
-[node name="spikes61" parent="Node" index="63" instance=ExtResource("4_hgwt7")]
+[node name="spikes61" parent="Node" index="69" instance=ExtResource("4_hgwt7")]
 position = Vector2(720, 688)
 rotation = 1.5708
 
-[node name="spikes62" parent="Node" index="64" instance=ExtResource("4_hgwt7")]
+[node name="spikes62" parent="Node" index="70" instance=ExtResource("4_hgwt7")]
 position = Vector2(720, 656)
 rotation = 1.5708
 
-[node name="spikes63" parent="Node" index="65" instance=ExtResource("4_hgwt7")]
+[node name="spikes63" parent="Node" index="71" instance=ExtResource("4_hgwt7")]
 position = Vector2(720, 624)
 rotation = 1.5708
 
-[node name="spikes64" parent="Node" index="66" instance=ExtResource("4_hgwt7")]
+[node name="spikes64" parent="Node" index="72" instance=ExtResource("4_hgwt7")]
 position = Vector2(720, 592)
 rotation = 1.5708
 
-[node name="spikes38" parent="Node" index="67" instance=ExtResource("4_hgwt7")]
+[node name="spikes38" parent="Node" index="73" instance=ExtResource("4_hgwt7")]
 position = Vector2(1648, 1008)
 
-[node name="spikes39" parent="Node" index="68" instance=ExtResource("4_hgwt7")]
+[node name="spikes39" parent="Node" index="74" instance=ExtResource("4_hgwt7")]
 position = Vector2(1680, 1008)
 
-[node name="spikes40" parent="Node" index="69" instance=ExtResource("4_hgwt7")]
+[node name="spikes40" parent="Node" index="75" instance=ExtResource("4_hgwt7")]
 position = Vector2(1712, 1008)

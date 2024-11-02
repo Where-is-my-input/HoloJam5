@@ -35,13 +35,40 @@ Ikkisoad"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1200.0
-offset_top = 72.0
-offset_right = 1715.0
-offset_bottom = 501.0
+offset_left = 752.0
+offset_top = 752.0
+offset_right = 1308.0
+offset_bottom = 1181.0
+rotation = -1.5708
 theme_override_font_sizes/font_size = 50
 text = "OpenGameArt Assets"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = 56.0
+offset_right = 2004.0
+offset_bottom = 1277.0
+scale = Vector2(0.797701, 0.797701)
+theme_override_font_sizes/font_size = 50
+text = "Backgrounds:
+
+Underwater BG - TeaRoost
+Ocean HDRI/skybox - genderfreak
+
+Soundtracks:
+
+Another space background track - yd
+Nautilus - poinl
+Underwater Theme - CleytonKauffman
+Underwater Theme - Spring Spring
+
+Sound Effects:
+
+Bubble Sound Effects - BMacZero"
 horizontal_alignment = 1
 vertical_alignment = 1

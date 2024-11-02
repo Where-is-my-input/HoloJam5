@@ -42,16 +42,29 @@ var dead:bool = false
 var grounded:bool = true
 
 func _ready() -> void:
+	setDefaultPalette()
 	tridentSprite.visible = trident
 	respawnPosition = global_position
 
+func setDefaultPalette():
+	material.set("shader_parameter/newColor1", Global.palette[0])
+	material.set("shader_parameter/newColor2", Global.palette[1])
+	material.set("shader_parameter/newColor3", Global.palette[2])
+	material.set("shader_parameter/newColor4", Global.palette[3])
+
+func setPalette(color1, color2, color3, color4):
+	material.set("shader_parameter/newColor1", color1)
+	material.set("shader_parameter/newColor2", color2)
+	material.set("shader_parameter/newColor3", color3)
+	material.set("shader_parameter/newColor4", color4)
+
 func installDeactivated():
-	print("Install deactivated")
+	setDefaultPalette()
 	maxAirDashes = Global.maxDashes
 	blood.visible = false
 
 func installActivated():
-	print("Install activated")
+	setPalette(Color(0.914, 0.129, 0.173, 1), Color(0.761, 0.082, 0.192, 1), Global.palette[2], Color(0.914, 0.129, 0.173))
 	maxAirDashes += 1
 	blood.visible = true
 
@@ -59,13 +72,16 @@ func _input(event: InputEvent) -> void:
 	tmr_idle.start(idle)
 
 func _physics_process(delta: float) -> void:
-	print(tmr_attack.time_left, " is stopped ", tmr_attack.is_stopped())
 	if dead: return
 	if hitStop > 0:
 		hitStop -= 1
 		animation_player.speed_scale = 0
 		velocity.x += SPEED * facing
 		if hitStop <= 0:
+			attackFinished()
+			setAnimation()
+			#attacking = false
+			#tmr_attack.stop()
 			animation_player.speed_scale = 1
 	else:
 		
@@ -142,7 +158,7 @@ func setAnimation():
 					animation_player.play("run")
 				else:
 					animation_player.play("dash")
-			elif animation_player.current_animation != "idle": 
+			elif animation_player.current_animation != "idle" && animation_player.current_animation != "a": 
 				animation_player.play("idle")
 		else:
 			if !tmr_dash.is_stopped():
@@ -155,7 +171,10 @@ func attack():
 	tmr_attack.start(atkTimer)
 	spawnBubbles()
 	attacking = true
-	velocity = Vector2(facing * SPEED, virtual_controller.direction.y * SPEED) * attackMovementSpeed
+	if install_progress.install:
+		velocity = Vector2(virtual_controller.direction.x * SPEED, virtual_controller.direction.y * SPEED) * attackMovementSpeed
+	else:
+		velocity = Vector2(facing * SPEED, virtual_controller.direction.y * SPEED) * attackMovementSpeed
 	if install_progress.install: velocity *= 1.5
 	animation_player.play("attack")
 

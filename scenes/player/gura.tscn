@@ -1,11 +1,23 @@
-[gd_scene load_steps=31 format=3 uid="uid://b68opk4tqriel"]
+[gd_scene load_steps=33 format=3 uid="uid://b68opk4tqriel"]
 
+[ext_resource type="Shader" path="res://scenes/player/gura.gdshader" id="1_1grh2"]
 [ext_resource type="Script" path="res://scenes/player/gura.gd" id="1_ntysr"]
 [ext_resource type="PackedScene" uid="uid://rc3aggfpupcw" path="res://scenes/virtual_controller/virtual_controller.tscn" id="3_ms0ls"]
 [ext_resource type="Texture2D" uid="uid://b0r4gvaa14n17" path="res://assets/images/gura/gura_sprites.png" id="3_ssl41"]
 [ext_resource type="PackedScene" uid="uid://dy52xgdagusrt" path="res://scenes/player/gura_noises.tscn" id="4_jxgs5"]
 [ext_resource type="PackedScene" uid="uid://bhes1tqrdc0h8" path="res://scenes/HUD/install_progress.tscn" id="5_u1jl8"]
 [ext_resource type="PackedScene" uid="uid://cpa8evle5vart" path="res://scenes/vfx/blood.tscn" id="6_7i17h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_daj06"]
+shader = ExtResource("1_1grh2")
+shader_parameter/color1 = Color(0.203922, 0.454902, 0.619608, 1)
+shader_parameter/color2 = Color(0.294118, 0.556863, 0.682353, 1)
+shader_parameter/color3 = Color(0.388235, 0.815686, 0.831373, 1)
+shader_parameter/color4 = Color(0.521569, 0.780392, 0.905882, 1)
+shader_parameter/newColor1 = Color(0.913725, 0.129412, 0.172549, 1)
+shader_parameter/newColor2 = Color(0.760784, 0.0823529, 0.192157, 1)
+shader_parameter/newColor3 = Color(248, 0, 248, 255)
+shader_parameter/newColor4 = Color(0.913725, 0.129412, 0.172549, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gr1wf"]
 atlas = ExtResource("3_ssl41")
@@ -1064,10 +1076,12 @@ _data = {
 
 [node name="gura" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
+material = SubResource("ShaderMaterial_daj06")
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_ntysr")
 
 [node name="trident" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
 position = Vector2(-8.66667, 0.666666)
 rotation = 0.299227
 scale = Vector2(0.248, 0.248)
@@ -1075,12 +1089,14 @@ sprite_frames = SubResource("SpriteFrames_tnjbk")
 flip_h = true
 
 [node name="aspr" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
 position = Vector2(-4.66667, 6.66667)
 scale = Vector2(0.247667, 0.247667)
 sprite_frames = SubResource("SpriteFrames_fvmxf")
 animation = &"idle"
 
 [node name="hurtbox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 16)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_33hbr")
@@ -1091,12 +1107,14 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+visible = false
 position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_hvf67")
 disabled = true
 debug_color = Color(0.991833, 0, 0.260309, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
+visible = false
 position = Vector2(29, 5.66667)
 shape = SubResource("RectangleShape2D_hjrn0")
 debug_color = Color(0.99107, 0, 0.270347, 0.42)

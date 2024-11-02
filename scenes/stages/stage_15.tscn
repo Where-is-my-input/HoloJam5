@@ -14,7 +14,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 position = Vector2(120, 120)
 
 [node name="gura" parent="." index="2"]
-position = Vector2(120, 312)
+position = Vector2(104, 320)
 maxJumps = 2
 maxAirDashes = 1
 trident = true

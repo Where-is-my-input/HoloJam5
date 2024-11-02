@@ -15,7 +15,8 @@ var DEATH = {
 var IDLE = {
 	"astheysay" = preload("res://assets/audio/Gura/as_they_say.mp3"),
 	"a" = preload("res://assets/audio/Gura/gura_-_a.mp3"),
-	"GURA___WHAT" = preload("res://assets/audio/Gura/Gura_-_What.mp3")
+	"GURA___WHAT" = preload("res://assets/audio/Gura/Gura_-_What.mp3"),
+	"GURA_WAKEUP_1" = preload("res://assets/audio/Gura/gura-wakeup-1.mp3")
 }
 
 var HIT = {
